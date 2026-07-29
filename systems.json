@@ -1,0 +1,662 @@
+[
+    {
+        "name": "ASIA PACIFIC",
+        "slug": "asia-pacific",
+        "description": "AUD and JPY both track the Pacific Rim growth and risk cycle closely.",
+        "pairs": [
+            "AUDJPY",
+            "AUDUSD",
+            "AUDCAD",
+            "AUDCHF",
+            "CADJPY",
+            "USDJPY"
+        ],
+        "stats": {
+            "monthly": "4.91%",
+            "profitFactor": "2.94",
+            "winRate": "72.85%",
+            "maxDrawdown": "25.17%"
+        },
+        "details": {
+            "totalNetProfit": "$58,937.39",
+            "grossProfit": "$89,304.77",
+            "grossLoss": "-$30,367.38",
+            "recoveryFactor": "1.54",
+            "expectedPayoff": "133.34",
+            "sharpeRatio": "1.56",
+            "totalTrades": "442",
+            "shortTradesWon": "58.40%",
+            "longTradesWon": "91.67%",
+            "largestProfitTrade": "$6,072.41",
+            "largestLossTrade": "-$1,414.24",
+            "averageProfitTrade": "$277.34",
+            "averageLossTrade": "-$248.63"
+        }
+    },
+    {
+        "name": "AUD PAIRS",
+        "slug": "aud-pairs",
+        "description": "All Australian Dollar exposure in one system.",
+        "pairs": [
+            "AUDCAD",
+            "AUDCHF",
+            "AUDJPY",
+            "AUDUSD",
+            "EURAUD",
+            "GBPAUD"
+        ],
+        "stats": {
+            "monthly": "4.5%",
+            "profitFactor": "4.46",
+            "winRate": "76.17%",
+            "maxDrawdown": "11.34%"
+        },
+        "details": {
+            "totalNetProfit": "$54,012.31",
+            "grossProfit": "$69,617.22",
+            "grossLoss": "-$15,604.91",
+            "recoveryFactor": "3.94",
+            "expectedPayoff": "110",
+            "sharpeRatio": "1.9",
+            "totalTrades": "491",
+            "shortTradesWon": "71.24%",
+            "longTradesWon": "80.38%",
+            "largestProfitTrade": "$2,211.56",
+            "largestLossTrade": "-$634.93",
+            "averageProfitTrade": "$186.14",
+            "averageLossTrade": "-$130.28"
+        }
+    },
+    {
+        "name": "CAD PAIRS",
+        "slug": "cad-pairs",
+        "description": "All Canadian Dollar exposure in one system.",
+        "pairs": [
+            "AUDCAD",
+            "CADCHF",
+            "CADJPY",
+            "EURCAD",
+            "GBPCAD",
+            "USDCAD"
+        ],
+        "stats": {
+            "monthly": "7.08%",
+            "profitFactor": "3.35",
+            "winRate": "71.28%",
+            "maxDrawdown": "25.03%"
+        },
+        "details": {
+            "totalNetProfit": "$84,900.12",
+            "grossProfit": "$121,029.07",
+            "grossLoss": "-$36,128.95",
+            "recoveryFactor": "1.94",
+            "expectedPayoff": "172.91",
+            "sharpeRatio": "1.67",
+            "totalTrades": "491",
+            "shortTradesWon": "62.50%",
+            "longTradesWon": "81.50%",
+            "largestProfitTrade": "$4,969.36",
+            "largestLossTrade": "-$911.86",
+            "averageProfitTrade": "$345.80",
+            "averageLossTrade": "-$251.50"
+        }
+    },
+    {
+        "name": "CARRY TRADE",
+        "slug": "carry-trade",
+        "description": "Higher-yield currencies against the traditional low-yield funding currencies.",
+        "pairs": [
+            "AUDJPY",
+            "CADJPY",
+            "AUDCHF",
+            "CADCHF",
+            "GBPCHF"
+        ],
+        "stats": {
+            "monthly": "4.98%",
+            "profitFactor": "3.62",
+            "winRate": "70.89%",
+            "maxDrawdown": "20.75%"
+        },
+        "details": {
+            "totalNetProfit": "$59,726.39",
+            "grossProfit": "$82,546.40",
+            "grossLoss": "-$22,820.01",
+            "recoveryFactor": "2.72",
+            "expectedPayoff": "160.99",
+            "sharpeRatio": "1.5",
+            "totalTrades": "371",
+            "shortTradesWon": "57.55%",
+            "longTradesWon": "78.88%",
+            "largestProfitTrade": "$2,962.50",
+            "largestLossTrade": "-$634.93",
+            "averageProfitTrade": "$313.86",
+            "averageLossTrade": "-$207.09"
+        }
+    },
+    {
+        "name": "CHF PAIRS",
+        "slug": "chf-pairs",
+        "description": "All Swiss Franc exposure in one system.",
+        "pairs": [
+            "AUDCHF",
+            "CADCHF",
+            "EURCHF",
+            "GBPCHF",
+            "USDCHF"
+        ],
+        "stats": {
+            "monthly": "3.79%",
+            "profitFactor": "2.39",
+            "winRate": "64.02%",
+            "maxDrawdown": "21.04%"
+        },
+        "details": {
+            "totalNetProfit": "$45,497.03",
+            "grossProfit": "$78,157.25",
+            "grossLoss": "-$32,660.22",
+            "recoveryFactor": "2.05",
+            "expectedPayoff": "120.36",
+            "sharpeRatio": "1.09",
+            "totalTrades": "378",
+            "shortTradesWon": "52.86%",
+            "longTradesWon": "70.59%",
+            "largestProfitTrade": "$2,962.50",
+            "largestLossTrade": "-$1,018.73",
+            "averageProfitTrade": "$322.96",
+            "averageLossTrade": "-$236.86"
+        }
+    },
+    {
+        "name": "COMMODITY",
+        "slug": "commodity",
+        "description": "AUD and CAD are resource-export economies that move with global growth and commodity prices.",
+        "pairs": [
+            "AUDCAD",
+            "AUDUSD",
+            "AUDCHF",
+            "AUDJPY",
+            "USDCAD"
+        ],
+        "stats": {
+            "monthly": "6.36%",
+            "profitFactor": "4.23",
+            "winRate": "76.79%",
+            "maxDrawdown": "16.69%"
+        },
+        "details": {
+            "totalNetProfit": "$76,360.14",
+            "grossProfit": "$100,001.30",
+            "grossLoss": "-$23,641.16",
+            "recoveryFactor": "4.2",
+            "expectedPayoff": "161.1",
+            "sharpeRatio": "1.84",
+            "totalTrades": "474",
+            "shortTradesWon": "66.67%",
+            "longTradesWon": "82.35%",
+            "largestProfitTrade": "$3,040.97",
+            "largestLossTrade": "-$625.45",
+            "averageProfitTrade": "$274.73",
+            "averageLossTrade": "-$209.65"
+        }
+    },
+    {
+        "name": "COMMODITY VS HAVEN",
+        "slug": "commodity-vs-haven",
+        "description": "Commodity-linked currencies traded against classic safe-haven currencies.",
+        "pairs": [
+            "AUDCHF",
+            "AUDJPY",
+            "CADCHF",
+            "CADJPY"
+        ],
+        "stats": {
+            "monthly": "6.28%",
+            "profitFactor": "4.14",
+            "winRate": "71.11%",
+            "maxDrawdown": "17.09%"
+        },
+        "details": {
+            "totalNetProfit": "$75,339.37",
+            "grossProfit": "$99,339.00",
+            "grossLoss": "-$23,999.63",
+            "recoveryFactor": "3.95",
+            "expectedPayoff": "189.29",
+            "sharpeRatio": "1.8",
+            "totalTrades": "398",
+            "shortTradesWon": "63.87%",
+            "longTradesWon": "81.88%",
+            "largestProfitTrade": "$3,040.97",
+            "largestLossTrade": "-$672.83",
+            "averageProfitTrade": "$351.02",
+            "averageLossTrade": "-$203.83"
+        }
+    },
+    {
+        "name": "DIVERSIFIED MIX",
+        "slug": "diversified-mix",
+        "description": "One pair per theme \u2014 major, carry, cross, haven, commodity \u2014 built for minimal overlap.",
+        "pairs": [
+            "EURUSD",
+            "AUDJPY",
+            "GBPCAD",
+            "USDCHF",
+            "EURAUD"
+        ],
+        "stats": {
+            "monthly": "2.21%",
+            "profitFactor": "1.94",
+            "winRate": "69.27%",
+            "maxDrawdown": "24.91%"
+        },
+        "details": {
+            "totalNetProfit": "$26,567.38",
+            "grossProfit": "$54,914.25",
+            "grossLoss": "-$28,346.87",
+            "recoveryFactor": "0.79",
+            "expectedPayoff": "62.81",
+            "sharpeRatio": "0.91",
+            "totalTrades": "423",
+            "shortTradesWon": "64.75%",
+            "longTradesWon": "76.54%",
+            "largestProfitTrade": "$4,155.84",
+            "largestLossTrade": "-$860.91",
+            "averageProfitTrade": "$187.42",
+            "averageLossTrade": "-$216.10"
+        }
+    },
+    {
+        "name": "EUR PAIRS",
+        "slug": "eur-pairs",
+        "description": "All Euro exposure in one system.",
+        "pairs": [
+            "EURAUD",
+            "EURCAD",
+            "EURCHF",
+            "EURGBP",
+            "EURUSD"
+        ],
+        "stats": {
+            "monthly": "3.14%",
+            "profitFactor": "4.69",
+            "winRate": "68.75%",
+            "maxDrawdown": "7.49%"
+        },
+        "details": {
+            "totalNetProfit": "$37,724.14",
+            "grossProfit": "$47,941.24",
+            "grossLoss": "-$10,217.10",
+            "recoveryFactor": "3.96",
+            "expectedPayoff": "94.31",
+            "sharpeRatio": "1.9",
+            "totalTrades": "400",
+            "shortTradesWon": "73.24%",
+            "longTradesWon": "63.64%",
+            "largestProfitTrade": "$1,728.49",
+            "largestLossTrade": "-$386.40",
+            "averageProfitTrade": "$174.33",
+            "averageLossTrade": "-$79.92"
+        }
+    },
+    {
+        "name": "EUROPE",
+        "slug": "europe",
+        "description": "Euro, Pound, and Swiss Franc \u2014 the three core European currencies.",
+        "pairs": [
+            "EURGBP",
+            "EURCHF",
+            "GBPCHF",
+            "EURUSD",
+            "GBPUSD",
+            "USDCHF"
+        ],
+        "stats": {
+            "monthly": "4.08%",
+            "profitFactor": "2.41",
+            "winRate": "65.67%",
+            "maxDrawdown": "13.37%"
+        },
+        "details": {
+            "totalNetProfit": "$48,902.76",
+            "grossProfit": "$83,660.77",
+            "grossLoss": "-$34,758.01",
+            "recoveryFactor": "2.24",
+            "expectedPayoff": "97.03",
+            "sharpeRatio": "1.35",
+            "totalTrades": "504",
+            "shortTradesWon": "61.11%",
+            "longTradesWon": "65.28%",
+            "largestProfitTrade": "$2,700.85",
+            "largestLossTrade": "-$1,033.09",
+            "averageProfitTrade": "$252.75",
+            "averageLossTrade": "-$198.83"
+        }
+    },
+    {
+        "name": "GBP PAIRS",
+        "slug": "gbp-pairs",
+        "description": "All Pound Sterling exposure in one system.",
+        "pairs": [
+            "EURGBP",
+            "GBPAUD",
+            "GBPCAD",
+            "GBPCHF",
+            "GBPUSD"
+        ],
+        "stats": {
+            "monthly": "3.77%",
+            "profitFactor": "2.51",
+            "winRate": "64.42%",
+            "maxDrawdown": "19.08%"
+        },
+        "details": {
+            "totalNetProfit": "$45,249.96",
+            "grossProfit": "$75,302.34",
+            "grossLoss": "-$30,052.38",
+            "recoveryFactor": "1.59",
+            "expectedPayoff": "105.23",
+            "sharpeRatio": "1.27",
+            "totalTrades": "430",
+            "shortTradesWon": "66.02%",
+            "longTradesWon": "61.99%",
+            "largestProfitTrade": "$4,155.84",
+            "largestLossTrade": "-$759.11",
+            "averageProfitTrade": "$271.85",
+            "averageLossTrade": "-$194.35"
+        }
+    },
+    {
+        "name": "GLOBAL",
+        "slug": "global",
+        "description": "One pair touching each of the seven currencies \u2014 the broadest possible regional spread.",
+        "pairs": [
+            "EURUSD",
+            "USDJPY",
+            "AUDCAD",
+            "GBPCHF",
+            "EURAUD",
+            "CADJPY"
+        ],
+        "stats": {
+            "monthly": "4.47%",
+            "profitFactor": "2.71",
+            "winRate": "70.70%",
+            "maxDrawdown": "27.57%"
+        },
+        "details": {
+            "totalNetProfit": "$53,589.28",
+            "grossProfit": "$84,847.32",
+            "grossLoss": "-$31,258.04",
+            "recoveryFactor": "1.25",
+            "expectedPayoff": "104.67",
+            "sharpeRatio": "1.44",
+            "totalTrades": "512",
+            "shortTradesWon": "64.04%",
+            "longTradesWon": "77.96%",
+            "largestProfitTrade": "$6,072.41",
+            "largestLossTrade": "-$1,414.24",
+            "averageProfitTrade": "$234.38",
+            "averageLossTrade": "-$205.44"
+        }
+    },
+    {
+        "name": "MAJORS",
+        "slug": "majors",
+        "description": "The single highest-volume, most-traded pairs in the universe.",
+        "pairs": [
+            "EURUSD",
+            "USDJPY",
+            "GBPUSD",
+            "USDCHF",
+            "AUDUSD",
+            "EURGBP"
+        ],
+        "stats": {
+            "monthly": "4.52%",
+            "profitFactor": "2.17",
+            "winRate": "67.99%",
+            "maxDrawdown": "33.88%"
+        },
+        "details": {
+            "totalNetProfit": "$54,193.02",
+            "grossProfit": "$100,644.18",
+            "grossLoss": "-$46,451.16",
+            "recoveryFactor": "0.96",
+            "expectedPayoff": "97.47",
+            "sharpeRatio": "1.16",
+            "totalTrades": "556",
+            "shortTradesWon": "63.66%",
+            "longTradesWon": "75.62%",
+            "largestProfitTrade": "$6,072.41",
+            "largestLossTrade": "-$1,414.24",
+            "averageProfitTrade": "$266.25",
+            "averageLossTrade": "-$258.15"
+        }
+    },
+    {
+        "name": "MINOR CROSSES",
+        "slug": "minor-crosses",
+        "description": "Lower-liquidity cross pairs, complementary to the Majors system.",
+        "pairs": [
+            "GBPAUD",
+            "GBPCHF",
+            "AUDCHF",
+            "CADCHF",
+            "EURAUD"
+        ],
+        "stats": {
+            "monthly": "4.36%",
+            "profitFactor": "3.22",
+            "winRate": "66.15%",
+            "maxDrawdown": "19.53%"
+        },
+        "details": {
+            "totalNetProfit": "$52,332.29",
+            "grossProfit": "$75,920.05",
+            "grossLoss": "-$23,587.76",
+            "recoveryFactor": "2.57",
+            "expectedPayoff": "135.23",
+            "sharpeRatio": "1.34",
+            "totalTrades": "387",
+            "shortTradesWon": "65.96%",
+            "longTradesWon": "66.33%",
+            "largestProfitTrade": "$2,962.50",
+            "largestLossTrade": "-$625.45",
+            "averageProfitTrade": "$296.56",
+            "averageLossTrade": "-$176.91"
+        }
+    },
+    {
+        "name": "NORTH AMERICA",
+        "slug": "north-america",
+        "description": "Built around the Canadian Dollar, the region's primary non-USD currency.",
+        "pairs": [
+            "USDCAD",
+            "AUDCAD",
+            "CADCHF",
+            "CADJPY",
+            "EURCAD",
+            "GBPCAD"
+        ],
+        "stats": {
+            "monthly": "7.08%",
+            "profitFactor": "3.35",
+            "winRate": "71.28%",
+            "maxDrawdown": "25.03%"
+        },
+        "details": {
+            "totalNetProfit": "$84,900.12",
+            "grossProfit": "$121,029.07",
+            "grossLoss": "-$36,128.95",
+            "recoveryFactor": "1.94",
+            "expectedPayoff": "172.91",
+            "sharpeRatio": "1.67",
+            "totalTrades": "491",
+            "shortTradesWon": "62.50%",
+            "longTradesWon": "81.50%",
+            "largestProfitTrade": "$4,969.36",
+            "largestLossTrade": "-$911.86",
+            "averageProfitTrade": "$345.80",
+            "averageLossTrade": "-$251.50"
+        }
+    },
+    {
+        "name": "RESERVE CURRENCIES",
+        "slug": "reserve-currencies",
+        "description": "USD, EUR, JPY, GBP \u2014 the world's top central-bank reserve currencies.",
+        "pairs": [
+            "EURUSD",
+            "GBPUSD",
+            "USDJPY",
+            "EURGBP"
+        ],
+        "stats": {
+            "monthly": "3.34%",
+            "profitFactor": "2.41",
+            "winRate": "65.62%",
+            "maxDrawdown": "24.98%"
+        },
+        "details": {
+            "totalNetProfit": "$40,076.52",
+            "grossProfit": "$68,421.90",
+            "grossLoss": "-$28,345.38",
+            "recoveryFactor": "1.11",
+            "expectedPayoff": "104.37",
+            "sharpeRatio": "1.25",
+            "totalTrades": "384",
+            "shortTradesWon": "62.98%",
+            "longTradesWon": "71.31%",
+            "largestProfitTrade": "$5,060.34",
+            "largestLossTrade": "-$1,177.21",
+            "averageProfitTrade": "$271.52",
+            "averageLossTrade": "-$212.15"
+        }
+    },
+    {
+        "name": "RISK CURRENCIES",
+        "slug": "risk-currencies",
+        "description": "AUD and GBP are higher-beta, growth-sensitive, and rally hardest in risk-on markets.",
+        "pairs": [
+            "AUDUSD",
+            "GBPAUD",
+            "GBPCAD",
+            "AUDCAD",
+            "GBPUSD",
+            "AUDCHF"
+        ],
+        "stats": {
+            "monthly": "5.59%",
+            "profitFactor": "2.9",
+            "winRate": "67.69%",
+            "maxDrawdown": "16.54%"
+        },
+        "details": {
+            "totalNetProfit": "$67,068.68",
+            "grossProfit": "$102,438.78",
+            "grossLoss": "-$35,370.10",
+            "recoveryFactor": "2.44",
+            "expectedPayoff": "146.44",
+            "sharpeRatio": "1.72",
+            "totalTrades": "458",
+            "shortTradesWon": "62.42%",
+            "longTradesWon": "78.29%",
+            "largestProfitTrade": "$4,270.63",
+            "largestLossTrade": "-$771.99",
+            "averageProfitTrade": "$330.45",
+            "averageLossTrade": "-$235.54"
+        }
+    },
+    {
+        "name": "SAFE-HAVEN",
+        "slug": "safe-haven",
+        "description": "CHF, JPY, and USD are classic defensive currencies that strengthen in risk-off conditions.",
+        "pairs": [
+            "USDCHF",
+            "USDJPY",
+            "AUDCHF",
+            "AUDJPY",
+            "CADCHF",
+            "CADJPY"
+        ],
+        "stats": {
+            "monthly": "5.22%",
+            "profitFactor": "2.27",
+            "winRate": "68.26%",
+            "maxDrawdown": "25.65%"
+        },
+        "details": {
+            "totalNetProfit": "$62,648.00",
+            "grossProfit": "$112,013.27",
+            "grossLoss": "-$49,365.27",
+            "recoveryFactor": "1.51",
+            "expectedPayoff": "125.05",
+            "sharpeRatio": "1.23",
+            "totalTrades": "501",
+            "shortTradesWon": "51.14%",
+            "longTradesWon": "87.34%",
+            "largestProfitTrade": "$6,072.41",
+            "largestLossTrade": "-$1,414.24",
+            "averageProfitTrade": "$327.52",
+            "averageLossTrade": "-$306.18"
+        }
+    },
+    {
+        "name": "STABLE PAIRS",
+        "slug": "stable-pairs",
+        "description": "A lower-volatility basket selected for steadier, more consistent equity curves.",
+        "pairs": [],
+        "stats": {
+            "monthly": "3.76%",
+            "profitFactor": "2.68",
+            "winRate": "72.35%",
+            "maxDrawdown": "19.61%"
+        },
+        "details": {
+            "totalNetProfit": "$45,066.54",
+            "grossProfit": "$71,963.35",
+            "grossLoss": "-$26,896.81",
+            "recoveryFactor": "1.5",
+            "expectedPayoff": "103.84",
+            "sharpeRatio": "1.22",
+            "totalTrades": "434",
+            "shortTradesWon": "66.83%",
+            "longTradesWon": "77.02%",
+            "largestProfitTrade": "$2,271.73",
+            "largestLossTrade": "-$1,018.72",
+            "averageProfitTrade": "$229.18",
+            "averageLossTrade": "-$220.92"
+        }
+    },
+    {
+        "name": "TRANS ATLANTIC",
+        "slug": "trans-atlantic",
+        "description": "A direct link between Europe and North America.",
+        "pairs": [
+            "EURUSD",
+            "EURCAD",
+            "GBPUSD",
+            "GBPCAD"
+        ],
+        "stats": {
+            "monthly": "4.52%",
+            "profitFactor": "2.83",
+            "winRate": "64.50%",
+            "maxDrawdown": "22.16%"
+        },
+        "details": {
+            "totalNetProfit": "$54,272.79",
+            "grossProfit": "$83,979.56",
+            "grossLoss": "-$29,706.77",
+            "recoveryFactor": "1.57",
+            "expectedPayoff": "147.08",
+            "sharpeRatio": "1.4",
+            "totalTrades": "369",
+            "shortTradesWon": "65.22%",
+            "longTradesWon": "61.43%",
+            "largestProfitTrade": "$4,259.46",
+            "largestLossTrade": "-$770.59",
+            "averageProfitTrade": "$352.86",
+            "averageLossTrade": "-$223.96"
+        }
+    }
+]

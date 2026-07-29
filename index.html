@@ -4,15 +4,61 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Quantistry Systems — Automated FX trading systems</title>
+    <title>Quantistry Systems | Automated FX Trading Systems</title>
     <meta name="description"
-        content="Quantistry Systems builds and runs a lineup of automated currency trading systems, each built around one correlation thesis, deployable on FIFO, 10x, regular, or prop firm accounts.">
+        content="Quantistry Systems builds and deploys a lineup of automated currency trading systems, each built around one correlation thesis, optimized for your broker and account environment.">
+    <meta name="keywords"
+        content="automated trading systems, algorithmic forex trading, prop firm trading systems, FIFO broker trading, automated FX strategies, trading system licensing">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="Quantistry Systems">
+    <meta name="theme-color" content="#0B0E14">
+    <link rel="canonical" href="https://quantistry.systems/">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Quantistry Systems | Automated FX Trading Systems">
+    <meta property="og:description"
+        content="A lineup of automated currency trading systems, each built around one correlation thesis, optimized for your broker and account environment.">
+    <meta property="og:url" content="https://quantistry.systems/">
+    <meta property="og:site_name" content="Quantistry Systems">
+    <meta property="og:image" content="https://quantistry.systems/og-image.png">
+    <meta property="og:locale" content="en_US">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Quantistry Systems | Automated FX Trading Systems">
+    <meta name="twitter:description"
+        content="A lineup of automated currency trading systems, each built around one correlation thesis, optimized for your broker and account environment.">
+    <meta name="twitter:image" content="https://quantistry.systems/og-image.png">
+
+    <link rel="icon"
+        href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%230B0E14'/%3E%3Ccircle cx='16' cy='16' r='7' fill='%23C89B4A'/%3E%3C/svg%3E">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap"
         rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Quantistry Systems",
+  "url": "https://quantistry.systems/",
+  "description": "Quantistry Systems builds and deploys automated currency trading systems for institutional and professional accounts, each optimized for the client's broker and account environment.",
+  "sameAs": []
+}
+</script>
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "Quantistry Systems",
+  "url": "https://quantistry.systems/"
+}
+</script>
+
     <script>
         tailwind.config = {
             theme: {
@@ -31,7 +77,7 @@
                         badred: '#B06456',
                     },
                     fontFamily: {
-                        serif: ['"Instrument Serif"', 'serif'],
+                        display: ['Archivo', 'sans-serif'],
                         sans: ['Inter', 'sans-serif'],
                         mono: ['"IBM Plex Mono"', 'monospace'],
                     },
@@ -51,20 +97,6 @@
         ::selection {
             background: #C89B4A;
             color: #0B0E14;
-        }
-
-        .tape-track {
-            animation: tape-scroll 24s linear infinite;
-        }
-
-        @keyframes tape-scroll {
-            from {
-                transform: translateY(0);
-            }
-
-            to {
-                transform: translateY(-50%);
-            }
         }
 
         .fade-up {
@@ -112,11 +144,11 @@
             background: rgba(233, 230, 221, 0.04);
         }
 
-        .env-node {
+        .step-node {
             transition: border-color 0.25s ease, transform 0.25s ease;
         }
 
-        .env-node:hover {
+        .step-node:hover {
             border-color: #1B1F27;
             transform: translateY(-3px);
         }
@@ -124,7 +156,6 @@
         .pair-tag {
             font-family: 'IBM Plex Mono', monospace;
             font-size: 11px;
-            letter-spacing: 0.01em;
             background: rgba(233, 230, 221, 0.06);
             color: rgba(233, 230, 221, 0.6);
             border: 1px solid rgba(233, 230, 221, 0.10);
@@ -132,6 +163,7 @@
 
         .system-card {
             transition: border-color 0.2s ease, transform 0.2s ease;
+            cursor: pointer;
         }
 
         .system-card:hover {
@@ -142,13 +174,25 @@
             display: none;
         }
 
+        .tab-btn {
+            font-family: 'IBM Plex Mono', monospace;
+            transition: color 0.2s ease, border-color 0.2s ease;
+            border-bottom: 2px solid transparent;
+            color: rgba(233, 230, 221, 0.45);
+        }
+
+        .tab-btn.active {
+            color: #E9E6DD;
+            border-color: #C89B4A;
+        }
+
+        #modal-overlay {
+            transition: opacity 0.2s ease;
+        }
+
         @media (prefers-reduced-motion: reduce) {
             html {
                 scroll-behavior: auto;
-            }
-
-            .tape-track {
-                animation: none;
             }
 
             .fade-up {
@@ -157,7 +201,7 @@
                 transition: none;
             }
 
-            .env-node:hover,
+            .step-node:hover,
             .system-card:hover {
                 transform: none;
             }
@@ -171,281 +215,363 @@
 
 <body class="font-sans text-bone antialiased">
 
+    <a href="#main"
+        class="sr-only focus:not-sr-only focus:absolute focus:z-50 focus:bg-brass focus:text-ink focus:px-4 focus:py-2">Skip
+        to content</a>
+
     <header class="sticky top-0 z-40 bg-ink/90 backdrop-blur border-b border-white/10">
         <div class="max-w-7xl mx-auto px-6 lg:px-10 h-16 flex items-center justify-between">
             <a href="#" class="flex items-center gap-2.5">
-                <span class="w-2 h-2 rounded-full bg-brass"></span>
-                <span class="font-mono text-[15px] tracking-tight text-bone">Quantistry <span
+                <span class="w-2 h-2 rounded-full bg-brass" aria-hidden="true"></span>
+                <span class="font-display font-semibold text-[15px] tracking-tight text-bone">Quantistry <span
                         class="text-brass">Systems</span></span>
             </a>
-            <nav class="hidden md:flex items-center gap-8 text-sm text-bone/70">
+            <nav class="hidden md:flex items-center gap-8 text-sm text-bone/70" aria-label="Primary">
                 <a href="#systems" class="hover:text-bone transition-colors">Systems</a>
-                <a href="#environments" class="hover:text-bone transition-colors">Environments</a>
+                <a href="#process" class="hover:text-bone transition-colors">Onboarding</a>
+                <a href="#keymaker" class="hover:text-bone transition-colors">KeyMaker CRM</a>
                 <a href="#performance" class="hover:text-bone transition-colors">Performance</a>
-                <a href="#quote" class="hover:text-bone transition-colors">Desks</a>
             </nav>
             <a href="#cta" class="btn-primary text-sm font-medium px-4 py-2 rounded-sm">Talk to us</a>
         </div>
     </header>
 
-    <!-- HERO -->
-    <section class="relative overflow-hidden border-b border-white/10">
-        <div
-            class="max-w-7xl mx-auto px-6 lg:px-10 pt-16 pb-20 lg:pt-24 lg:pb-28 grid lg:grid-cols-[1.05fr_0.95fr] gap-14 lg:gap-10 items-center">
-            <div class="fade-up">
-                <p class="font-mono text-xs tracking-[0.18em] uppercase text-brass mb-6">Automated currency trading
-                    systems</p>
-                <h1 class="font-serif text-5xl sm:text-6xl lg:text-[3.6rem] leading-[1.05] text-bone mb-7">
-                    <span id="system-count">20</span> systems.<br class="hidden sm:block"> One thesis each.
-                </h1>
-                <p class="text-lg text-bone/70 max-w-xl mb-9 leading-relaxed">
-                    Quantistry runs a lineup of automated FX trading systems, each built around a distinct
-                    currency-pair thesis — carry, commodity, safe-haven, majors, and more. Every system
-                    deploys on the broker and account type your desk actually uses.
-                </p>
-                <div class="flex flex-wrap items-center gap-4">
-                    <a href="#systems" class="btn-primary font-medium px-6 py-3.5 rounded-sm">See the full lineup</a>
-                    <a href="#environments" class="btn-ghost font-medium px-6 py-3.5 rounded-sm">How deployment
-                        works</a>
-                </div>
-                <div
-                    class="flex flex-wrap items-center gap-x-6 gap-y-2 mt-10 pt-8 border-t border-white/10 font-mono text-xs text-bone/50">
-                    <span>Regulated FIFO brokers</span>
-                    <span class="w-1 h-1 rounded-full bg-bone/20"></span>
-                    <span>10x accounts</span>
-                    <span class="w-1 h-1 rounded-full bg-bone/20"></span>
-                    <span>Regular accounts</span>
-                    <span class="w-1 h-1 rounded-full bg-bone/20"></span>
-                    <span>Prop firms</span>
-                </div>
-            </div>
+    <main id="main">
 
-            <div class="fade-up">
-                <div class="panel rounded-md overflow-hidden">
-                    <div class="flex items-center justify-between px-5 py-3 border-b border-white/10">
-                        <span class="font-mono text-xs text-bone/60 tracking-wide">SYSTEM TAPE</span>
-                        <span class="flex items-center gap-2 font-mono text-xs text-okgreen">
-                            <span class="w-1.5 h-1.5 rounded-full bg-okgreen"></span> LIVE
-                        </span>
+        <!-- HERO -->
+        <section class="relative overflow-hidden border-b border-white/10">
+            <div
+                class="max-w-7xl mx-auto px-6 lg:px-10 pt-16 pb-20 lg:pt-24 lg:pb-28 grid lg:grid-cols-[1.05fr_0.95fr] gap-14 lg:gap-10 items-center">
+                <div class="fade-up">
+                    <p class="font-mono text-xs tracking-[0.18em] uppercase text-brass mb-6">Automated currency trading
+                        systems</p>
+                    <h1
+                        class="font-display font-semibold text-5xl sm:text-6xl lg:text-[3.4rem] leading-[1.08] text-bone mb-7">
+                        One system per thesis. Not one system for everything.
+                    </h1>
+                    <p class="text-lg text-bone/70 max-w-xl mb-9 leading-relaxed">
+                        Quantistry runs a lineup of automated FX trading systems — carry, commodity, safe-haven,
+                        majors, and more — each isolated to its own currency logic and independently
+                        allocatable across your accounts.
+                    </p>
+                    <div class="flex flex-wrap items-center gap-4">
+                        <a href="#systems" class="btn-primary font-medium px-6 py-3.5 rounded-sm">See the full
+                            lineup</a>
+                        <a href="#process" class="btn-ghost font-medium px-6 py-3.5 rounded-sm">How onboarding works</a>
                     </div>
-                    <div class="h-[380px] overflow-hidden relative">
-                        <div
-                            class="absolute inset-0 bg-gradient-to-b from-inkalt via-transparent to-inkalt pointer-events-none z-10">
-                        </div>
-                        <div class="tape-track font-mono text-[13px]" id="tape"></div>
-                    </div>
-                    <div class="grid grid-cols-3 border-t border-white/10 divide-x divide-white/10">
-                        <div class="px-5 py-3.5">
-                            <p class="text-[11px] text-bone/45 uppercase tracking-wide mb-1">Avg. monthly</p>
-                            <p class="font-mono text-sm text-bone">4.70%</p>
-                        </div>
-                        <div class="px-5 py-3.5">
-                            <p class="text-[11px] text-bone/45 uppercase tracking-wide mb-1">Avg. profit factor</p>
-                            <p class="font-mono text-sm text-bone">3.06</p>
-                        </div>
-                        <div class="px-5 py-3.5">
-                            <p class="text-[11px] text-bone/45 uppercase tracking-wide mb-1">Avg. win rate</p>
-                            <p class="font-mono text-sm text-bone">69.3%</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- SYSTEMS GRID -->
-    <section id="systems" class="bg-ink border-b border-white/10">
-        <div class="max-w-7xl mx-auto px-6 lg:px-10 py-24 lg:py-28">
-            <div class="fade-up max-w-2xl mb-16">
-                <p class="font-mono text-xs tracking-[0.18em] uppercase text-brass mb-4">The lineup</p>
-                <h2 class="font-serif text-4xl sm:text-[2.75rem] leading-tight text-bone mb-5">Every system is built on
-                    one correlation, not a blend of everything</h2>
-                <p class="text-bone/65 text-lg leading-relaxed">
-                    Instead of one strategy trading every pair, Quantistry runs a separate system per
-                    thesis — a shared currency, a shared risk-on/risk-off behavior, a shared region. Each
-                    one is backtested, scored, and can be allocated independently.
-                </p>
-            </div>
-
-            <div id="systems-grid" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5"></div>
-
-            <div class="flex justify-center mt-10">
-                <button id="toggle-systems"
-                    class="btn-ghost font-mono text-xs uppercase tracking-wide px-5 py-3 rounded-sm">Show all
-                    systems</button>
-            </div>
-        </div>
-    </section>
-
-    <!-- ENVIRONMENTS -->
-    <section id="environments" class="bg-paper text-[#1B1F27] border-b border-paperline">
-        <div class="max-w-7xl mx-auto px-6 lg:px-10 py-24 lg:py-28">
-            <div class="fade-up max-w-2xl mb-16">
-                <p class="font-mono text-xs tracking-[0.18em] uppercase text-[#8a6a2f] mb-4">Deployment</p>
-                <h2 class="font-serif text-4xl sm:text-[2.75rem] leading-tight mb-5">One system, tuned for the account
-                    it runs on</h2>
-                <p class="text-[#4a4d43] text-lg leading-relaxed">
-                    A system's thesis doesn't change from broker to broker — but its risk sizing and order
-                    handling do. Every system in the lineup ships in four calibrations.
-                </p>
-            </div>
-
-            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-5">
-                <div class="fade-up env-node bg-[#F4F1E7] border border-paperline rounded-md p-6">
-                    <p class="font-mono text-xs text-[#8a6a2f] mb-4">FIFO</p>
-                    <h3 class="font-semibold text-lg mb-2">Regulated brokers</h3>
-                    <p class="text-[#5B5F56] text-sm leading-relaxed">Order sequencing and exits are reordered to
-                        satisfy first-in-first-out rules, with no hedged positions on the same pair, and no change to
-                        the underlying signal.</p>
-                </div>
-                <div class="fade-up env-node bg-[#F4F1E7] border border-paperline rounded-md p-6">
-                    <p class="font-mono text-xs text-[#8a6a2f] mb-4">10X</p>
-                    <h3 class="font-semibold text-lg mb-2">10x accounts</h3>
-                    <p class="text-[#5B5F56] text-sm leading-relaxed">Position sizing is recalculated against the higher
-                        leverage cap, so risk-per-trade stays the same fraction of equity regardless of account
-                        leverage.</p>
-                </div>
-                <div class="fade-up env-node bg-[#F4F1E7] border border-paperline rounded-md p-6">
-                    <p class="font-mono text-xs text-[#8a6a2f] mb-4">STANDARD</p>
-                    <h3 class="font-semibold text-lg mb-2">Regular accounts</h3>
-                    <p class="text-[#5B5F56] text-sm leading-relaxed">The default calibration. Full position sizing, no
-                        leverage or FIFO constraints, and the widest range of order types available.</p>
-                </div>
-                <div class="fade-up env-node bg-[#F4F1E7] border border-paperline rounded-md p-6">
-                    <p class="font-mono text-xs text-[#8a6a2f] mb-4">PROP</p>
-                    <h3 class="font-semibold text-lg mb-2">Prop firms</h3>
-                    <p class="text-[#5B5F56] text-sm leading-relaxed">Daily and maximum drawdown limits are enforced
-                        pre-trade, so a system stops itself before it can breach an evaluation or funded-account rule.
+                    <p class="mt-10 pt-8 border-t border-white/10 font-mono text-xs text-bone/50 leading-relaxed">
+                        Systems can be optimized for FIFO-regulated, leveraged, or prop firm accounts —
+                        regular trading accounts are the default.
                     </p>
                 </div>
-            </div>
-        </div>
-    </section>
 
-    <!-- PERFORMANCE -->
-    <section id="performance" class="bg-inkalt border-b border-white/10">
-        <div class="max-w-7xl mx-auto px-6 lg:px-10 py-20">
-            <p class="fade-up font-mono text-xs tracking-[0.18em] uppercase text-brass mb-10">Aggregate across the
-                current lineup</p>
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-10">
                 <div class="fade-up">
-                    <p class="font-mono text-4xl text-brass num-tick mb-2">4.70<span
-                            class="text-xl text-bone/50">%</span></p>
-                    <p class="text-bone/50 text-sm">Average monthly return per system</p>
-                </div>
-                <div class="fade-up">
-                    <p class="font-mono text-4xl text-brass num-tick mb-2">3.06</p>
-                    <p class="text-bone/50 text-sm">Average profit factor</p>
-                </div>
-                <div class="fade-up">
-                    <p class="font-mono text-4xl text-brass num-tick mb-2">69.3<span
-                            class="text-xl text-bone/50">%</span></p>
-                    <p class="text-bone/50 text-sm">Average win rate</p>
-                </div>
-                <div class="fade-up">
-                    <p class="font-mono text-4xl text-brass num-tick mb-2">8,894</p>
-                    <p class="text-bone/50 text-sm">Trades in the current backtest set</p>
+                    <div class="panel rounded-md overflow-hidden">
+                        <div class="flex items-center justify-between px-5 py-3 border-b border-white/10">
+                            <span class="font-mono text-xs text-bone/60 tracking-wide">SYSTEM PERFORMANCE</span>
+                            <span class="flex items-center gap-2 font-mono text-xs text-okgreen">
+                                <span class="w-1.5 h-1.5 rounded-full bg-okgreen" aria-hidden="true"></span> BACKTESTED
+                            </span>
+                        </div>
+                        <div id="hero-tabs" class="flex flex-wrap gap-x-1 gap-y-0 px-5 pt-4" role="tablist"
+                            aria-label="Select a system"></div>
+                        <div class="px-5 pt-4">
+                            <svg id="hero-curve" viewBox="0 0 400 150" class="w-full h-[150px]"
+                                preserveAspectRatio="none" aria-hidden="true"></svg>
+                            <p class="font-mono text-[10px] text-bone/30 mt-1 mb-2">Illustrative equity curve, derived
+                                from backtested monthly return &amp; drawdown</p>
+                        </div>
+                        <div id="hero-stats" class="grid grid-cols-4 border-t border-white/10 divide-x divide-white/10">
+                        </div>
+                    </div>
                 </div>
             </div>
-            <p class="fade-up text-bone/35 text-xs mt-12 max-w-2xl">
-                Figures are historical / backtested results across the current system lineup. Past
-                performance does not guarantee future results, and trading carries risk of loss.
-            </p>
-        </div>
-    </section>
+        </section>
 
-    <!-- QUOTE -->
-    <section id="quote" class="bg-paper text-[#1B1F27] border-b border-paperline">
-        <div class="max-w-4xl mx-auto px-6 lg:px-10 py-24 lg:py-28 text-center">
-            <p class="fade-up font-serif italic text-3xl sm:text-4xl leading-[1.4] mb-8">
-                "We run the carry and commodity systems on a prop account and the majors system on our
-                own FIFO broker. Same lineup, two completely different risk profiles."
-            </p>
-            <div class="fade-up font-mono text-sm text-[#5B5F56]">
-                Head of Systematic Trading · Meridian Capital Partners
-            </div>
-        </div>
-    </section>
+        <!-- SYSTEMS GRID -->
+        <section id="systems" class="bg-ink border-b border-white/10">
+            <div class="max-w-7xl mx-auto px-6 lg:px-10 py-24 lg:py-28">
+                <div class="fade-up max-w-2xl mb-16">
+                    <p class="font-mono text-xs tracking-[0.18em] uppercase text-brass mb-4">The lineup</p>
+                    <h2 class="font-display font-semibold text-4xl sm:text-[2.5rem] leading-tight text-bone mb-5">Every
+                        system is built on one correlation, not a blend of everything</h2>
+                    <p class="text-bone/65 text-lg leading-relaxed">
+                        Instead of one strategy trading every pair, Quantistry runs a separate system per
+                        thesis — a shared currency, a shared risk-on/risk-off behavior, a shared region. Each
+                        one is backtested, scored, and can be allocated independently. Click any system for
+                        the full statistics.
+                    </p>
+                </div>
 
-    <!-- CTA -->
-    <section id="cta" class="bg-ink">
-        <div class="max-w-5xl mx-auto px-6 lg:px-10 py-24 lg:py-28 text-center">
-            <p class="fade-up font-mono text-xs tracking-[0.18em] uppercase text-brass mb-5">Get started</p>
-            <h2 class="fade-up font-serif text-4xl sm:text-5xl text-bone leading-tight mb-6">
-                Pick a system. Pick your broker. We'll calibrate the rest.
-            </h2>
-            <p class="fade-up text-bone/65 text-lg max-w-xl mx-auto mb-10">
-                A system review takes thirty minutes. We'll walk through the lineup and show which
-                systems fit your accounts and risk appetite.
-            </p>
-            <div class="fade-up flex flex-wrap items-center justify-center gap-4">
-                <a href="#" class="btn-primary font-medium px-7 py-4 rounded-sm">Request a system review</a>
-                <a href="#" class="btn-ghost font-medium px-7 py-4 rounded-sm">Download performance sheet</a>
+                <div id="systems-grid" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5" role="list"></div>
+
+                <div class="flex justify-center mt-10">
+                    <button id="toggle-systems"
+                        class="btn-ghost font-mono text-xs uppercase tracking-wide px-5 py-3 rounded-sm"
+                        aria-expanded="false">Show all systems</button>
+                </div>
             </div>
-        </div>
-    </section>
+        </section>
+
+        <!-- ONBOARDING PROCESS -->
+        <section id="process" class="bg-paper text-[#1B1F27] border-b border-paperline">
+            <div class="max-w-7xl mx-auto px-6 lg:px-10 py-24 lg:py-28">
+                <div class="fade-up max-w-2xl mb-16">
+                    <p class="font-mono text-xs tracking-[0.18em] uppercase text-[#8a6a2f] mb-4">Onboarding</p>
+                    <h2 class="font-display font-semibold text-4xl sm:text-[2.5rem] leading-tight mb-5">From first call
+                        to live systems, four stages</h2>
+                    <p class="text-[#4a4d43] text-lg leading-relaxed">
+                        Every client goes through the same process, regardless of which systems or how many
+                        you choose to run.
+                    </p>
+                </div>
+
+                <div class="grid md:grid-cols-4 gap-5">
+                    <div class="fade-up step-node bg-[#F4F1E7] border border-paperline rounded-md p-6">
+                        <p class="font-mono text-xs text-[#8a6a2f] mb-4">01 · CONTACT</p>
+                        <h3 class="font-display font-semibold text-lg mb-2">Discuss your environment</h3>
+                        <p class="text-[#5B5F56] text-sm leading-relaxed">We start with your setup — broker, leverage,
+                            minimum deposit, and the account type you'll be trading on.</p>
+                    </div>
+                    <div class="fade-up step-node bg-[#F4F1E7] border border-paperline rounded-md p-6">
+                        <p class="font-mono text-xs text-[#8a6a2f] mb-4">02 · PRE-OPTIMIZATION</p>
+                        <h3 class="font-display font-semibold text-lg mb-2">Tune to your environment</h3>
+                        <p class="text-[#5B5F56] text-sm leading-relaxed">Chosen systems are re-optimized and backtested
+                            against your broker's own data feed and account conditions, not generic history.</p>
+                    </div>
+                    <div class="fade-up step-node bg-[#F4F1E7] border border-paperline rounded-md p-6">
+                        <p class="font-mono text-xs text-[#8a6a2f] mb-4">03 · TESTING</p>
+                        <h3 class="font-display font-semibold text-lg mb-2">Run before it counts</h3>
+                        <p class="text-[#5B5F56] text-sm leading-relaxed">The calibrated systems run for a set testing
+                            period so you can verify execution, behavior, and fit before committing capital.</p>
+                    </div>
+                    <div class="fade-up step-node bg-[#F4F1E7] border border-paperline rounded-md p-6">
+                        <p class="font-mono text-xs text-[#8a6a2f] mb-4">04 · HANDOVER</p>
+                        <h3 class="font-display font-semibold text-lg mb-2">Go live with the desk</h3>
+                        <p class="text-[#5B5F56] text-sm leading-relaxed">Full documentation, account access, and
+                            credentials are handed over as systems move from test to live.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- KEYMAKER CRM -->
+        <section id="keymaker" class="bg-ink border-b border-white/10">
+            <div class="max-w-7xl mx-auto px-6 lg:px-10 py-24 lg:py-28 grid lg:grid-cols-2 gap-14 items-center">
+                <div class="fade-up">
+                    <p class="font-mono text-xs tracking-[0.18em] uppercase text-brass mb-4">Included with every setup
+                    </p>
+                    <h2 class="font-display font-semibold text-4xl sm:text-[2.5rem] leading-tight text-bone mb-5">Every
+                        client runs on KeyMaker, our licensing &amp; reporting layer</h2>
+                    <p class="text-bone/65 text-lg leading-relaxed mb-8">
+                        <a href="https://keymaker.cloud/" target="_blank" rel="noopener"
+                            class="text-brass hover:text-brassbright underline underline-offset-4">KeyMaker</a>
+                        is the back-office platform bundled with every Quantistry deployment. It issues and
+                        tracks the license behind each system you run, bills automatically as licenses
+                        activate or renew, and gives you one reporting view across every client, system, and
+                        environment.
+                    </p>
+                    <ul class="space-y-4">
+                        <li class="flex gap-3">
+                            <span class="w-1.5 h-1.5 rounded-full bg-brass mt-2 shrink-0" aria-hidden="true"></span>
+                            <span class="text-bone/75"><strong class="text-bone">License tracking</strong> — every
+                                system license issued, tracked, and revocable per client and per environment.</span>
+                        </li>
+                        <li class="flex gap-3">
+                            <span class="w-1.5 h-1.5 rounded-full bg-brass mt-2 shrink-0" aria-hidden="true"></span>
+                            <span class="text-bone/75"><strong class="text-bone">Automated invoicing</strong> — invoices
+                                generate on activation, renewal, or change, with no manual billing.</span>
+                        </li>
+                        <li class="flex gap-3">
+                            <span class="w-1.5 h-1.5 rounded-full bg-brass mt-2 shrink-0" aria-hidden="true"></span>
+                            <span class="text-bone/75"><strong class="text-bone">Performance reporting</strong> — track
+                                performance across every client, system, and account from one dashboard.</span>
+                        </li>
+                        <li class="flex gap-3">
+                            <span class="w-1.5 h-1.5 rounded-full bg-brass mt-2 shrink-0" aria-hidden="true"></span>
+                            <span class="text-bone/75"><strong class="text-bone">Team &amp; partner access</strong> —
+                                assign clients to managers or partners with scoped, restricted visibility.</span>
+                        </li>
+                    </ul>
+                    <a href="https://keymaker.cloud/" target="_blank" rel="noopener"
+                        class="btn-ghost inline-block font-medium px-6 py-3.5 rounded-sm mt-9">Visit keymaker.cloud</a>
+                </div>
+
+                <div class="fade-up panel rounded-md overflow-hidden">
+                    <div class="flex items-center justify-between px-5 py-3 border-b border-white/10">
+                        <span class="font-mono text-xs text-bone/60 tracking-wide">KEYMAKER · CLIENT LICENSES</span>
+                    </div>
+                    <div class="divide-y divide-white/5 font-mono text-xs">
+                        <div class="grid grid-cols-4 px-5 py-3 text-bone/35 uppercase tracking-wide text-[10px]">
+                            <span>Client</span><span>System</span><span>Environment</span><span
+                                class="text-right">Status</span>
+                        </div>
+                        <div class="grid grid-cols-4 px-5 py-3 items-center">
+                            <span class="text-bone/75">Meridian Cap.</span><span class="text-bone/60">Carry
+                                Trade</span><span class="text-bone/50">Prop</span><span
+                                class="text-right text-okgreen">Active</span>
+                        </div>
+                        <div class="grid grid-cols-4 px-5 py-3 items-center">
+                            <span class="text-bone/75">Meridian Cap.</span><span class="text-bone/60">Majors</span><span
+                                class="text-bone/50">FIFO</span><span class="text-right text-okgreen">Active</span>
+                        </div>
+                        <div class="grid grid-cols-4 px-5 py-3 items-center">
+                            <span class="text-bone/75">Northline FX</span><span
+                                class="text-bone/60">Commodity</span><span class="text-bone/50">10x</span><span
+                                class="text-right text-brass">Renewing</span>
+                        </div>
+                        <div class="grid grid-cols-4 px-5 py-3 items-center">
+                            <span class="text-bone/75">Northline FX</span><span class="text-bone/60">Global</span><span
+                                class="text-bone/50">Regular</span><span class="text-right text-okgreen">Active</span>
+                        </div>
+                        <div class="grid grid-cols-4 px-5 py-3 items-center">
+                            <span class="text-bone/75">Arcbridge Ltd.</span><span
+                                class="text-bone/60">Safe-Haven</span><span class="text-bone/50">FIFO</span><span
+                                class="text-right text-bone/40">Processing</span>
+                        </div>
+                    </div>
+                    <div class="px-5 py-3.5 border-t border-white/10 font-mono text-[10px] text-bone/35">Illustrative
+                        preview — actual dashboard hosted at keymaker.cloud</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PERFORMANCE -->
+        <section id="performance" class="bg-inkalt border-b border-white/10">
+            <div class="max-w-7xl mx-auto px-6 lg:px-10 py-20">
+                <p class="fade-up font-mono text-xs tracking-[0.18em] uppercase text-brass mb-10">Aggregate across the
+                    current lineup</p>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-10">
+                    <div class="fade-up">
+                        <p class="font-mono text-4xl text-brass num-tick mb-2">4.70<span
+                                class="text-xl text-bone/50">%</span></p>
+                        <p class="text-bone/50 text-sm">Average monthly return per system</p>
+                    </div>
+                    <div class="fade-up">
+                        <p class="font-mono text-4xl text-brass num-tick mb-2">3.06</p>
+                        <p class="text-bone/50 text-sm">Average profit factor</p>
+                    </div>
+                    <div class="fade-up">
+                        <p class="font-mono text-4xl text-brass num-tick mb-2">69.3<span
+                                class="text-xl text-bone/50">%</span></p>
+                        <p class="text-bone/50 text-sm">Average win rate</p>
+                    </div>
+                    <div class="fade-up">
+                        <p class="font-mono text-4xl text-brass num-tick mb-2">8,894</p>
+                        <p class="text-bone/50 text-sm">Trades in the current backtest set</p>
+                    </div>
+                </div>
+                <p class="fade-up text-bone/35 text-xs mt-12 max-w-2xl">
+                    Figures are historical / backtested results across the current system lineup. Past
+                    performance does not guarantee future results, and trading carries risk of loss.
+                </p>
+            </div>
+        </section>
+
+        <!-- QUOTE -->
+        <section class="bg-paper text-[#1B1F27] border-b border-paperline">
+            <div class="max-w-4xl mx-auto px-6 lg:px-10 py-24 lg:py-28 text-center">
+                <p class="fade-up font-display italic text-3xl sm:text-4xl leading-[1.4] mb-8">
+                    "We run the carry and commodity systems on a prop account and the majors system on our
+                    own FIFO broker. Same lineup, two completely different risk profiles."
+                </p>
+                <div class="fade-up font-mono text-sm text-[#5B5F56]">
+                    Head of Systematic Trading · Meridian Capital Partners
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA -->
+        <section id="cta" class="bg-ink">
+            <div class="max-w-5xl mx-auto px-6 lg:px-10 py-24 lg:py-28 text-center">
+                <p class="fade-up font-mono text-xs tracking-[0.18em] uppercase text-brass mb-5">Get started</p>
+                <h2 class="fade-up font-display font-semibold text-4xl sm:text-5xl text-bone leading-tight mb-6">
+                    Pick a system. Pick your broker. We'll calibrate the rest.
+                </h2>
+                <p class="fade-up text-bone/65 text-lg max-w-xl mx-auto mb-10">
+                    A system review takes thirty minutes. We'll walk through the lineup and show which
+                    systems fit your accounts and risk appetite.
+                </p>
+                <div class="fade-up flex flex-wrap items-center justify-center gap-4">
+                    <a href="#" class="btn-primary font-medium px-7 py-4 rounded-sm">Request a system review</a>
+                    <a href="#" class="btn-ghost font-medium px-7 py-4 rounded-sm">Download performance sheet</a>
+                </div>
+            </div>
+        </section>
+
+    </main>
 
     <footer class="bg-ink border-t border-white/10">
         <div
             class="max-w-7xl mx-auto px-6 lg:px-10 py-12 flex flex-col sm:flex-row justify-between gap-8 sm:items-center">
             <div class="flex items-center gap-2.5">
-                <span class="w-2 h-2 rounded-full bg-brass"></span>
+                <span class="w-2 h-2 rounded-full bg-brass" aria-hidden="true"></span>
                 <span class="font-mono text-sm text-bone/70">Quantistry Systems</span>
             </div>
-            <nav class="flex flex-wrap gap-x-8 gap-y-2 text-sm text-bone/45">
+            <nav class="flex flex-wrap gap-x-8 gap-y-2 text-sm text-bone/45" aria-label="Footer">
                 <a href="#systems" class="hover:text-bone/80 transition-colors">Systems</a>
-                <a href="#environments" class="hover:text-bone/80 transition-colors">Environments</a>
-                <a href="#" class="hover:text-bone/80 transition-colors">Security</a>
-                <a href="#" class="hover:text-bone/80 transition-colors">Documentation</a>
+                <a href="#process" class="hover:text-bone/80 transition-colors">Onboarding</a>
+                <a href="#keymaker" class="hover:text-bone/80 transition-colors">KeyMaker CRM</a>
                 <a href="#" class="hover:text-bone/80 transition-colors">Contact</a>
             </nav>
             <p class="text-xs text-bone/35 font-mono">© 2026 Quantistry Systems</p>
         </div>
     </footer>
 
-    <script>
-        const systems = [
-            { name: 'MAJORS', desc: 'The single highest-volume, most-traded pairs in the universe.', pairs: ['EURUSD', 'USDJPY', 'GBPUSD', 'USDCHF', 'AUDUSD', 'EURGBP'], monthly: '4.52%', pf: '2.17', win: '68.0%', dd: '33.88%' },
-            { name: 'CARRY TRADE', desc: 'Higher-yield currencies against the traditional low-yield funding currencies.', pairs: ['AUDJPY', 'CADJPY', 'AUDCHF', 'CADCHF', 'GBPCHF'], monthly: '4.98%', pf: '3.62', win: '70.9%', dd: '20.75%' },
-            { name: 'COMMODITY', desc: 'AUD and CAD are resource-export economies that move with global growth and commodity prices.', pairs: ['AUDCAD', 'AUDUSD', 'AUDCHF', 'AUDJPY', 'USDCAD'], monthly: '6.36%', pf: '4.23', win: '76.8%', dd: '16.69%' },
-            { name: 'SAFE-HAVEN', desc: 'CHF, JPY, and USD are classic defensive currencies that strengthen in risk-off conditions.', pairs: ['USDCHF', 'USDJPY', 'AUDCHF', 'AUDJPY', 'CADCHF', 'CADJPY'], monthly: '5.22%', pf: '2.27', win: '68.3%', dd: '25.65%' },
-            { name: 'RISK CURRENCIES', desc: 'AUD and GBP are higher-beta, growth-sensitive, and rally hardest in risk-on markets.', pairs: ['AUDUSD', 'GBPAUD', 'GBPCAD', 'AUDCAD', 'GBPUSD', 'AUDCHF'], monthly: '5.59%', pf: '2.90', win: '67.7%', dd: '16.54%' },
-            { name: 'GLOBAL', desc: 'One pair touching each of the seven currencies — the broadest possible regional spread.', pairs: ['EURUSD', 'USDJPY', 'AUDCAD', 'GBPCHF', 'EURAUD', 'CADJPY'], monthly: '4.47%', pf: '2.71', win: '70.7%', dd: '27.57%' },
-            { name: 'NORTH AMERICA', desc: 'Built around the Canadian Dollar, the region\'s primary non-USD currency.', pairs: ['USDCAD', 'AUDCAD', 'CADCHF', 'CADJPY', 'EURCAD', 'GBPCAD'], monthly: '7.08%', pf: '3.35', win: '71.3%', dd: '25.03%' },
-            { name: 'EUROPE', desc: 'Euro, Pound, and Swiss Franc — the three core European currencies.', pairs: ['EURGBP', 'EURCHF', 'GBPCHF', 'EURUSD', 'GBPUSD', 'USDCHF'], monthly: '4.08%', pf: '2.41', win: '65.7%', dd: '13.37%' },
-            { name: 'AUD PAIRS', desc: 'All Australian Dollar exposure in one system.', pairs: ['AUDCAD', 'AUDCHF', 'AUDJPY', 'AUDUSD', 'EURAUD', 'GBPAUD'], monthly: '4.50%', pf: '4.46', win: '76.2%', dd: '11.34%' },
-            { name: 'CAD PAIRS', desc: 'All Canadian Dollar exposure in one system.', pairs: ['AUDCAD', 'CADCHF', 'CADJPY', 'EURCAD', 'GBPCAD', 'USDCAD'], monthly: '7.08%', pf: '3.35', win: '71.3%', dd: '25.03%' },
-            { name: 'CHF PAIRS', desc: 'All Swiss Franc exposure in one system.', pairs: ['AUDCHF', 'CADCHF', 'EURCHF', 'GBPCHF', 'USDCHF'], monthly: '3.79%', pf: '2.39', win: '64.0%', dd: '21.04%' },
-            { name: 'EUR PAIRS', desc: 'All Euro exposure in one system.', pairs: ['EURAUD', 'EURCAD', 'EURCHF', 'EURGBP', 'EURUSD'], monthly: '3.14%', pf: '4.69', win: '68.8%', dd: '7.49%' },
-            { name: 'GBP PAIRS', desc: 'All Pound Sterling exposure in one system.', pairs: ['EURGBP', 'GBPAUD', 'GBPCAD', 'GBPCHF', 'GBPUSD'], monthly: '3.77%', pf: '2.51', win: '64.4%', dd: '19.08%' },
-            { name: 'RESERVE CURRENCIES', desc: 'USD, EUR, JPY, GBP — the world\'s top central-bank reserve currencies.', pairs: ['EURUSD', 'GBPUSD', 'USDJPY', 'EURGBP'], monthly: '3.34%', pf: '2.41', win: '65.6%', dd: '24.98%' },
-            { name: 'ASIA PACIFIC', desc: 'AUD and JPY both track the Pacific Rim growth and risk cycle closely.', pairs: ['AUDJPY', 'AUDUSD', 'AUDCAD', 'AUDCHF', 'CADJPY', 'USDJPY'], monthly: '4.91%', pf: '2.94', win: '72.9%', dd: '25.17%' },
-            { name: 'TRANS ATLANTIC', desc: 'A direct link between Europe and North America.', pairs: ['EURUSD', 'EURCAD', 'GBPUSD', 'GBPCAD'], monthly: '4.52%', pf: '2.83', win: '64.5%', dd: '22.16%' },
-            { name: 'MINOR CROSSES', desc: 'Lower-liquidity cross pairs, complementary to the Majors system.', pairs: ['GBPAUD', 'GBPCHF', 'AUDCHF', 'CADCHF', 'EURAUD'], monthly: '4.36%', pf: '3.22', win: '66.2%', dd: '19.53%' },
-            { name: 'DIVERSIFIED MIX', desc: 'One pair per theme — major, carry, cross, haven, commodity — built for minimal overlap.', pairs: ['EURUSD', 'AUDJPY', 'GBPCAD', 'USDCHF', 'EURAUD'], monthly: '2.21%', pf: '1.94', win: '69.3%', dd: '24.91%' },
-            { name: 'COMMODITY VS HAVEN', desc: 'Commodity-linked currencies traded against classic safe-haven currencies.', pairs: ['AUDCHF', 'AUDJPY', 'CADCHF', 'CADJPY'], monthly: '6.28%', pf: '4.14', win: '71.1%', dd: '17.09%' },
-            { name: 'STABLE PAIRS', desc: 'A lower-volatility basket selected for steadier, more consistent equity curves.', pairs: [], monthly: '3.76%', pf: '2.68', win: '72.4%', dd: '19.61%' },
-        ];
-
-        document.getElementById('system-count').textContent = systems.length;
-
-        const grid = document.getElementById('systems-grid');
-        const visibleCount = 9;
-        grid.innerHTML = systems.map((s, i) => `
-    <div class="fade-up system-card panel rounded-md p-6 flex flex-col ${i >= visibleCount ? 'hidden-system' : ''}">
-      <div class="flex items-start justify-between mb-3">
-        <h3 class="font-serif text-xl text-bone pr-2">${s.name}</h3>
-        <span class="font-mono text-[11px] text-okgreen shrink-0 pt-1">${s.monthly}/mo</span>
-      </div>
-      <p class="text-bone/60 text-sm leading-relaxed mb-4">${s.desc}</p>
-      ${s.pairs.length ? `<div class="flex flex-wrap gap-1.5 mb-5">${s.pairs.map(p => `<span class="pair-tag px-2 py-1 rounded-sm">${p}</span>`).join('')}</div>` : '<div class="mb-5"></div>'}
-      <div class="grid grid-cols-3 gap-2 mt-auto pt-4 border-t border-white/10 font-mono text-xs">
-        <div><p class="text-bone/35 mb-1">Profit factor</p><p class="text-bone/80">${s.pf}</p></div>
-        <div><p class="text-bone/35 mb-1">Win rate</p><p class="text-bone/80">${s.win}</p></div>
-        <div><p class="text-bone/35 mb-1">Max DD</p><p class="text-bone/80">${s.dd}</p></div>
-      </div>
+    <!-- MODAL -->
+    <div id="modal-overlay" class="fixed inset-0 bg-black/70 z-50 hidden items-center justify-center p-4"
+        role="presentation">
+        <div id="modal-content" class="panel bg-inkalt rounded-md max-w-2xl w-full max-h-[85vh] overflow-y-auto"
+            role="dialog" aria-modal="true" aria-labelledby="modal-title">
+        </div>
     </div>
-  `).join('');
+
+    <script>
+        let systemsData = [];
+
+        async function loadSystems() {
+            try {
+                const res = await fetch('systems.json');
+                systemsData = await res.json();
+            } catch (e) {
+                console.error('Could not load systems.json', e);
+                systemsData = [];
+            }
+            renderGrid();
+            renderHero();
+        }
+
+        // ---------- Systems grid + modal ----------
+        const grid = document.getElementById('systems-grid');
+        const visibleCount = 6;
+
+        function renderGrid() {
+            grid.innerHTML = systemsData.map((s, i) => `
+      <div class="fade-up system-card panel rounded-md p-6 flex flex-col ${i >= visibleCount ? 'hidden-system' : ''}"
+           role="listitem" tabindex="0" data-index="${i}">
+        <div class="flex items-start justify-between mb-3">
+          <h3 class="font-display font-semibold text-xl text-bone pr-2">${s.name}</h3>
+          <span class="font-mono text-[11px] text-okgreen shrink-0 pt-1">${s.stats.monthly}/mo</span>
+        </div>
+        <p class="text-bone/60 text-sm leading-relaxed mb-4">${s.description}</p>
+        ${s.pairs.length ? `<div class="flex flex-wrap gap-1.5 mb-5">${s.pairs.map(p => `<span class="pair-tag px-2 py-1 rounded-sm">${p}</span>`).join('')}</div>` : '<div class="mb-5"></div>'}
+        <div class="grid grid-cols-3 gap-2 mt-auto pt-4 border-t border-white/10 font-mono text-xs">
+          <div><p class="text-bone/35 mb-1">Profit factor</p><p class="text-bone/80">${s.stats.profitFactor}</p></div>
+          <div><p class="text-bone/35 mb-1">Win rate</p><p class="text-bone/80">${s.stats.winRate}</p></div>
+          <div><p class="text-bone/35 mb-1">Max DD</p><p class="text-bone/80">${s.stats.maxDrawdown}</p></div>
+        </div>
+      </div>
+    `).join('');
+
+            document.querySelectorAll('#systems-grid .system-card').forEach((el) => {
+                el.addEventListener('click', () => openModal(parseInt(el.dataset.index, 10)));
+                el.addEventListener('keydown', (e) => {
+                    if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openModal(parseInt(el.dataset.index, 10)); }
+                });
+            });
+
+            document.querySelectorAll('#systems-grid .fade-up').forEach((el) => observer.observe(el));
+        }
 
         const toggleBtn = document.getElementById('toggle-systems');
         let expanded = false;
@@ -456,37 +582,158 @@
                 el.classList.add('is-visible');
             });
             toggleBtn.textContent = expanded ? 'Show fewer systems' : 'Show all systems';
+            toggleBtn.setAttribute('aria-expanded', expanded ? 'true' : 'false');
         });
 
-        const symbols = ['EURUSD', 'GBPAUD', 'AUDCHF', 'USDCHF', 'CADJPY', 'EURCAD', 'GBPCHF', 'AUDJPY', 'USDCAD', 'EURGBP', 'AUDCAD', 'GBPUSD'];
-        const tapeRows = [];
-        for (let i = 0; i < 26; i++) {
-            const sym = symbols[Math.floor(Math.random() * symbols.length)];
-            const side = Math.random() > 0.5 ? 'BUY' : 'SELL';
-            const qty = (Math.floor(Math.random() * 20) + 1) * 5;
-            const price = (Math.random() * 0.9 + 0.6).toFixed(4);
-            const lat = Math.floor(Math.random() * 240) + 120;
-            tapeRows.push({ sym, side, qty, price, lat });
+        const overlay = document.getElementById('modal-overlay');
+        const modalContent = document.getElementById('modal-content');
+        let lastFocused = null;
+
+        function openModal(index) {
+            const s = systemsData[index];
+            if (!s) return;
+            lastFocused = document.activeElement;
+            modalContent.innerHTML = `
+      <div class="flex items-start justify-between px-6 py-5 border-b border-white/10">
+        <h3 id="modal-title" class="font-display font-semibold text-2xl text-bone">${s.name}</h3>
+        <button id="modal-close" class="text-bone/50 hover:text-bone font-mono text-sm" aria-label="Close">✕</button>
+      </div>
+      <div class="px-6 py-6">
+        <p class="text-bone/70 leading-relaxed mb-5">${s.description}</p>
+        ${s.pairs.length ? `<div class="flex flex-wrap gap-1.5 mb-6">${s.pairs.map(p => `<span class="pair-tag px-2 py-1 rounded-sm">${p}</span>`).join('')}</div>` : ''}
+        <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-6 font-mono text-xs">
+          <div class="panel rounded-sm p-3"><p class="text-bone/35 mb-1">Monthly</p><p class="text-bone text-sm">${s.stats.monthly}</p></div>
+          <div class="panel rounded-sm p-3"><p class="text-bone/35 mb-1">Profit factor</p><p class="text-bone text-sm">${s.stats.profitFactor}</p></div>
+          <div class="panel rounded-sm p-3"><p class="text-bone/35 mb-1">Win rate</p><p class="text-bone text-sm">${s.stats.winRate}</p></div>
+          <div class="panel rounded-sm p-3"><p class="text-bone/35 mb-1">Max drawdown</p><p class="text-bone text-sm">${s.stats.maxDrawdown}</p></div>
+        </div>
+        <h4 class="font-mono text-xs uppercase tracking-wide text-bone/40 mb-3">Full statistics</h4>
+        <dl class="grid grid-cols-2 gap-x-6 gap-y-3 font-mono text-xs text-bone/70">
+          <div class="flex justify-between border-b border-white/5 pb-2"><dt class="text-bone/40">Total net profit</dt><dd>${s.details.totalNetProfit}</dd></div>
+          <div class="flex justify-between border-b border-white/5 pb-2"><dt class="text-bone/40">Sharpe ratio</dt><dd>${s.details.sharpeRatio}</dd></div>
+          <div class="flex justify-between border-b border-white/5 pb-2"><dt class="text-bone/40">Recovery factor</dt><dd>${s.details.recoveryFactor}</dd></div>
+          <div class="flex justify-between border-b border-white/5 pb-2"><dt class="text-bone/40">Expected payoff</dt><dd>${s.details.expectedPayoff}</dd></div>
+          <div class="flex justify-between border-b border-white/5 pb-2"><dt class="text-bone/40">Total trades</dt><dd>${s.details.totalTrades}</dd></div>
+          <div class="flex justify-between border-b border-white/5 pb-2"><dt class="text-bone/40">Short trades won</dt><dd>${s.details.shortTradesWon}</dd></div>
+          <div class="flex justify-between border-b border-white/5 pb-2"><dt class="text-bone/40">Long trades won</dt><dd>${s.details.longTradesWon}</dd></div>
+          <div class="flex justify-between border-b border-white/5 pb-2"><dt class="text-bone/40">Gross profit</dt><dd>${s.details.grossProfit}</dd></div>
+          <div class="flex justify-between border-b border-white/5 pb-2"><dt class="text-bone/40">Gross loss</dt><dd>${s.details.grossLoss}</dd></div>
+          <div class="flex justify-between border-b border-white/5 pb-2"><dt class="text-bone/40">Largest profit trade</dt><dd>${s.details.largestProfitTrade}</dd></div>
+          <div class="flex justify-between border-b border-white/5 pb-2"><dt class="text-bone/40">Largest loss trade</dt><dd>${s.details.largestLossTrade}</dd></div>
+          <div class="flex justify-between border-b border-white/5 pb-2"><dt class="text-bone/40">Average profit trade</dt><dd>${s.details.averageProfitTrade}</dd></div>
+        </dl>
+        <p class="text-bone/30 text-[11px] mt-6">Historical / backtested results. Past performance does not guarantee future results.</p>
+      </div>
+    `;
+            overlay.classList.remove('hidden');
+            overlay.classList.add('flex');
+            document.body.style.overflow = 'hidden';
+            document.getElementById('modal-close').addEventListener('click', closeModal);
+            document.getElementById('modal-close').focus();
         }
 
-        function rowHTML(r) {
-            const sideColor = r.side === 'BUY' ? 'text-okgreen' : 'text-badred';
-            return `
-      <div class="flex items-center justify-between px-5 py-2.5 border-b border-white/5">
-        <span class="text-bone/80 w-20">${r.sym}</span>
-        <span class="${sideColor} w-12">${r.side}</span>
-        <span class="text-bone/50 w-14 text-right">${r.qty}</span>
-        <span class="text-bone/70 w-20 text-right">${r.price}</span>
-        <span class="text-bone/35 w-16 text-right">${r.lat}ms</span>
-      </div>`;
+        function closeModal() {
+            overlay.classList.add('hidden');
+            overlay.classList.remove('flex');
+            document.body.style.overflow = '';
+            if (lastFocused) lastFocused.focus();
         }
 
-        const tape = document.getElementById('tape');
-        if (tape) {
-            const html = tapeRows.map(rowHTML).join('');
-            tape.innerHTML = html + html;
+        overlay.addEventListener('click', (e) => { if (e.target === overlay) closeModal(); });
+        document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeModal(); });
+
+        // ---------- Hero performance explorer ----------
+        const heroSystemNames = ['MAJORS', 'CARRY TRADE', 'COMMODITY', 'SAFE-HAVEN', 'GLOBAL'];
+        let heroActive = 0;
+
+        function hashSeed(str) {
+            let h = 0;
+            for (let i = 0; i < str.length; i++) { h = (h << 5) - h + str.charCodeAt(i); h |= 0; }
+            return h;
+        }
+        function mulberry32(a) {
+            return function () {
+                a |= 0; a = (a + 0x6D2B79F5) | 0;
+                let t = Math.imul(a ^ (a >>> 15), 1 | a);
+                t = (t + Math.imul(t ^ (t >>> 7), 61 | t)) ^ t;
+                return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
+            };
         }
 
+        function buildCurvePoints(sys) {
+            const monthly = parseFloat(sys.stats.monthly) || 3;
+            const dd = parseFloat(sys.stats.maxDrawdown) || 20;
+            const rand = mulberry32(hashSeed(sys.name));
+            let val = 100;
+            const points = [val];
+            const n = 30;
+            for (let i = 1; i <= n; i++) {
+                const drift = (monthly / 100) / 3.2;
+                const vol = (dd / 100) * 0.55;
+                const shock = (rand() - 0.52) * vol;
+                val = Math.max(val * (1 + drift + shock), val * 0.4);
+                points.push(val);
+            }
+            return points;
+        }
+
+        function pointsToPath(points) {
+            const w = 400, h = 150, pad = 6;
+            const min = Math.min(...points), max = Math.max(...points);
+            const range = (max - min) || 1;
+            const step = (w) / (points.length - 1);
+            const coords = points.map((p, i) => {
+                const x = i * step;
+                const y = h - pad - ((p - min) / range) * (h - pad * 2);
+                return [x, y];
+            });
+            const line = coords.map((c, i) => (i === 0 ? `M${c[0]},${c[1]}` : `L${c[0]},${c[1]}`)).join(' ');
+            const area = `${line} L${w},${h} L0,${h} Z`;
+            return { line, area };
+        }
+
+        function renderHeroCurve() {
+            const sys = systemsData.find((s) => s.name === heroSystemNames[heroActive]);
+            if (!sys) return;
+            const { line, area } = pointsToPath(buildCurvePoints(sys));
+            const svg = document.getElementById('hero-curve');
+            svg.innerHTML = `
+      <defs>
+        <linearGradient id="curveFill" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#C89B4A" stop-opacity="0.35"/>
+          <stop offset="100%" stop-color="#C89B4A" stop-opacity="0"/>
+        </linearGradient>
+      </defs>
+      <path d="${area}" fill="url(#curveFill)" stroke="none"></path>
+      <path d="${line}" fill="none" stroke="#C89B4A" stroke-width="2"></path>
+    `;
+
+            document.getElementById('hero-stats').innerHTML = `
+      <div class="px-5 py-3.5"><p class="text-[11px] text-bone/45 uppercase tracking-wide mb-1">Monthly</p><p class="font-mono text-sm text-bone">${sys.stats.monthly}</p></div>
+      <div class="px-5 py-3.5"><p class="text-[11px] text-bone/45 uppercase tracking-wide mb-1">Profit factor</p><p class="font-mono text-sm text-bone">${sys.stats.profitFactor}</p></div>
+      <div class="px-5 py-3.5"><p class="text-[11px] text-bone/45 uppercase tracking-wide mb-1">Win rate</p><p class="font-mono text-sm text-bone">${sys.stats.winRate}</p></div>
+      <div class="px-5 py-3.5"><p class="text-[11px] text-bone/45 uppercase tracking-wide mb-1">Max DD</p><p class="font-mono text-sm text-bone">${sys.stats.maxDrawdown}</p></div>
+    `;
+        }
+
+        function renderHero() {
+            const tabs = document.getElementById('hero-tabs');
+            tabs.innerHTML = heroSystemNames.map((name, i) => `
+      <button class="tab-btn text-xs uppercase px-3 py-2 ${i === 0 ? 'active' : ''}" role="tab" aria-selected="${i === 0}" data-i="${i}">${name}</button>
+    `).join('');
+            tabs.querySelectorAll('.tab-btn').forEach((btn) => {
+                btn.addEventListener('click', () => {
+                    heroActive = parseInt(btn.dataset.i, 10);
+                    tabs.querySelectorAll('.tab-btn').forEach((b) => { b.classList.remove('active'); b.setAttribute('aria-selected', 'false'); });
+                    btn.classList.add('active');
+                    btn.setAttribute('aria-selected', 'true');
+                    renderHeroCurve();
+                });
+            });
+            renderHeroCurve();
+        }
+
+        // ---------- Scroll reveal ----------
         const observer = new IntersectionObserver((entries) => {
             entries.forEach((entry) => {
                 if (entry.isIntersecting) {
@@ -497,6 +744,8 @@
         }, { threshold: 0.15 });
 
         document.querySelectorAll('.fade-up').forEach((el) => observer.observe(el));
+
+        loadSystems();
     </script>
 
 </body>
