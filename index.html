@@ -2,42 +2,502 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Quantistry.systems - Under Construction</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quantistry Systems — Automated FX trading systems</title>
+    <meta name="description"
+        content="Quantistry Systems builds and runs a lineup of automated currency trading systems, each built around one correlation thesis, deployable on FIFO, 10x, regular, or prop firm accounts.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap"
+        rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        ink: '#0B0E14',
+                        inkalt: '#11161F',
+                        inkline: '#1C2230',
+                        paper: '#EAE6DA',
+                        paperline: '#D8D2C0',
+                        bone: '#E9E6DD',
+                        brass: '#C89B4A',
+                        brassbright: '#E0B562',
+                        teal: '#4C6B72',
+                        okgreen: '#6E9C7C',
+                        badred: '#B06456',
+                    },
+                    fontFamily: {
+                        serif: ['"Instrument Serif"', 'serif'],
+                        sans: ['Inter', 'sans-serif'],
+                        mono: ['"IBM Plex Mono"', 'monospace'],
+                    },
+                },
+            },
+        };
+    </script>
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background: #0B0E14;
+        }
+
+        ::selection {
+            background: #C89B4A;
+            color: #0B0E14;
+        }
+
+        .tape-track {
+            animation: tape-scroll 24s linear infinite;
+        }
+
+        @keyframes tape-scroll {
+            from {
+                transform: translateY(0);
+            }
+
+            to {
+                transform: translateY(-50%);
+            }
+        }
+
+        .fade-up {
+            opacity: 0;
+            transform: translateY(18px);
+            transition: opacity 0.7s ease, transform 0.7s ease;
+        }
+
+        .fade-up.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .panel {
+            border: 1px solid rgba(233, 230, 221, 0.10);
+            background: #11161F;
+        }
+
+        .panel:hover {
+            border-color: rgba(200, 155, 74, 0.45);
+        }
+
+        .btn-primary {
+            background: #C89B4A;
+            color: #0B0E14;
+            transition: background-color 0.2s ease, transform 0.15s ease;
+        }
+
+        .btn-primary:hover {
+            background: #E0B562;
+        }
+
+        .btn-primary:active {
+            transform: scale(0.98);
+        }
+
+        .btn-ghost {
+            border: 1px solid rgba(233, 230, 221, 0.22);
+            color: #E9E6DD;
+            transition: border-color 0.2s ease, background-color 0.2s ease;
+        }
+
+        .btn-ghost:hover {
+            border-color: rgba(233, 230, 221, 0.55);
+            background: rgba(233, 230, 221, 0.04);
+        }
+
+        .env-node {
+            transition: border-color 0.25s ease, transform 0.25s ease;
+        }
+
+        .env-node:hover {
+            border-color: #1B1F27;
+            transform: translateY(-3px);
+        }
+
+        .pair-tag {
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 11px;
+            letter-spacing: 0.01em;
+            background: rgba(233, 230, 221, 0.06);
+            color: rgba(233, 230, 221, 0.6);
+            border: 1px solid rgba(233, 230, 221, 0.10);
+        }
+
+        .system-card {
+            transition: border-color 0.2s ease, transform 0.2s ease;
+        }
+
+        .system-card:hover {
+            transform: translateY(-2px);
+        }
+
+        .hidden-system {
+            display: none;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            html {
+                scroll-behavior: auto;
+            }
+
+            .tape-track {
+                animation: none;
+            }
+
+            .fade-up {
+                opacity: 1;
+                transform: none;
+                transition: none;
+            }
+
+            .env-node:hover,
+            .system-card:hover {
+                transform: none;
+            }
+        }
+
+        .num-tick {
+            font-variant-numeric: tabular-nums;
+        }
+    </style>
 </head>
 
-<body class="bg-slate-950 text-slate-100 min-h-screen flex items-center justify-center px-6">
+<body class="font-sans text-bone antialiased">
 
-    <div class="max-w-xl w-full text-center space-y-6">
+    <header class="sticky top-0 z-40 bg-ink/90 backdrop-blur border-b border-white/10">
+        <div class="max-w-7xl mx-auto px-6 lg:px-10 h-16 flex items-center justify-between">
+            <a href="#" class="flex items-center gap-2.5">
+                <span class="w-2 h-2 rounded-full bg-brass"></span>
+                <span class="font-mono text-[15px] tracking-tight text-bone">Quantistry <span
+                        class="text-brass">Systems</span></span>
+            </a>
+            <nav class="hidden md:flex items-center gap-8 text-sm text-bone/70">
+                <a href="#systems" class="hover:text-bone transition-colors">Systems</a>
+                <a href="#environments" class="hover:text-bone transition-colors">Environments</a>
+                <a href="#performance" class="hover:text-bone transition-colors">Performance</a>
+                <a href="#quote" class="hover:text-bone transition-colors">Desks</a>
+            </nav>
+            <a href="#cta" class="btn-primary text-sm font-medium px-4 py-2 rounded-sm">Talk to us</a>
+        </div>
+    </header>
 
+    <!-- HERO -->
+    <section class="relative overflow-hidden border-b border-white/10">
         <div
-            class="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-emerald-500/10 border border-emerald-500/30 mb-2">
-            <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 text-emerald-400" fill="none" viewBox="0 0 24 24"
-                stroke="currentColor" stroke-width="1.5">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M3 3v18h18M7 15l4-6 3 4 5-8" />
-            </svg>
+            class="max-w-7xl mx-auto px-6 lg:px-10 pt-16 pb-20 lg:pt-24 lg:pb-28 grid lg:grid-cols-[1.05fr_0.95fr] gap-14 lg:gap-10 items-center">
+            <div class="fade-up">
+                <p class="font-mono text-xs tracking-[0.18em] uppercase text-brass mb-6">Automated currency trading
+                    systems</p>
+                <h1 class="font-serif text-5xl sm:text-6xl lg:text-[3.6rem] leading-[1.05] text-bone mb-7">
+                    <span id="system-count">20</span> systems.<br class="hidden sm:block"> One thesis each.
+                </h1>
+                <p class="text-lg text-bone/70 max-w-xl mb-9 leading-relaxed">
+                    Quantistry runs a lineup of automated FX trading systems, each built around a distinct
+                    currency-pair thesis — carry, commodity, safe-haven, majors, and more. Every system
+                    deploys on the broker and account type your desk actually uses.
+                </p>
+                <div class="flex flex-wrap items-center gap-4">
+                    <a href="#systems" class="btn-primary font-medium px-6 py-3.5 rounded-sm">See the full lineup</a>
+                    <a href="#environments" class="btn-ghost font-medium px-6 py-3.5 rounded-sm">How deployment
+                        works</a>
+                </div>
+                <div
+                    class="flex flex-wrap items-center gap-x-6 gap-y-2 mt-10 pt-8 border-t border-white/10 font-mono text-xs text-bone/50">
+                    <span>Regulated FIFO brokers</span>
+                    <span class="w-1 h-1 rounded-full bg-bone/20"></span>
+                    <span>10x accounts</span>
+                    <span class="w-1 h-1 rounded-full bg-bone/20"></span>
+                    <span>Regular accounts</span>
+                    <span class="w-1 h-1 rounded-full bg-bone/20"></span>
+                    <span>Prop firms</span>
+                </div>
+            </div>
+
+            <div class="fade-up">
+                <div class="panel rounded-md overflow-hidden">
+                    <div class="flex items-center justify-between px-5 py-3 border-b border-white/10">
+                        <span class="font-mono text-xs text-bone/60 tracking-wide">SYSTEM TAPE</span>
+                        <span class="flex items-center gap-2 font-mono text-xs text-okgreen">
+                            <span class="w-1.5 h-1.5 rounded-full bg-okgreen"></span> LIVE
+                        </span>
+                    </div>
+                    <div class="h-[380px] overflow-hidden relative">
+                        <div
+                            class="absolute inset-0 bg-gradient-to-b from-inkalt via-transparent to-inkalt pointer-events-none z-10">
+                        </div>
+                        <div class="tape-track font-mono text-[13px]" id="tape"></div>
+                    </div>
+                    <div class="grid grid-cols-3 border-t border-white/10 divide-x divide-white/10">
+                        <div class="px-5 py-3.5">
+                            <p class="text-[11px] text-bone/45 uppercase tracking-wide mb-1">Avg. monthly</p>
+                            <p class="font-mono text-sm text-bone">4.70%</p>
+                        </div>
+                        <div class="px-5 py-3.5">
+                            <p class="text-[11px] text-bone/45 uppercase tracking-wide mb-1">Avg. profit factor</p>
+                            <p class="font-mono text-sm text-bone">3.06</p>
+                        </div>
+                        <div class="px-5 py-3.5">
+                            <p class="text-[11px] text-bone/45 uppercase tracking-wide mb-1">Avg. win rate</p>
+                            <p class="font-mono text-sm text-bone">69.3%</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
+    </section>
 
-        <h1 class="text-3xl sm:text-4xl font-semibold tracking-tight">
-            Quantistry<span class="text-emerald-400">.systems</span>
-        </h1>
+    <!-- SYSTEMS GRID -->
+    <section id="systems" class="bg-ink border-b border-white/10">
+        <div class="max-w-7xl mx-auto px-6 lg:px-10 py-24 lg:py-28">
+            <div class="fade-up max-w-2xl mb-16">
+                <p class="font-mono text-xs tracking-[0.18em] uppercase text-brass mb-4">The lineup</p>
+                <h2 class="font-serif text-4xl sm:text-[2.75rem] leading-tight text-bone mb-5">Every system is built on
+                    one correlation, not a blend of everything</h2>
+                <p class="text-bone/65 text-lg leading-relaxed">
+                    Instead of one strategy trading every pair, Quantistry runs a separate system per
+                    thesis — a shared currency, a shared risk-on/risk-off behavior, a shared region. Each
+                    one is backtested, scored, and can be allocated independently.
+                </p>
+            </div>
 
-        <p class="text-slate-400 text-lg">
-            Automated trading strategies, engineered for consistency.
-        </p>
+            <div id="systems-grid" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5"></div>
 
-        <div class="inline-block px-4 py-1.5 rounded-full border border-slate-700 bg-slate-900 text-sm text-slate-300">
-            Site under construction - launching soon
+            <div class="flex justify-center mt-10">
+                <button id="toggle-systems"
+                    class="btn-ghost font-mono text-xs uppercase tracking-wide px-5 py-3 rounded-sm">Show all
+                    systems</button>
+            </div>
         </div>
+    </section>
 
-        <p class="text-slate-500 text-sm pt-6">
-            Want early access? <a href="mailto:info@quantistry.systems"
-                class="text-emerald-400 hover:text-emerald-300 underline underline-offset-2">info@quantistry.systems</a>
-        </p>
+    <!-- ENVIRONMENTS -->
+    <section id="environments" class="bg-paper text-[#1B1F27] border-b border-paperline">
+        <div class="max-w-7xl mx-auto px-6 lg:px-10 py-24 lg:py-28">
+            <div class="fade-up max-w-2xl mb-16">
+                <p class="font-mono text-xs tracking-[0.18em] uppercase text-[#8a6a2f] mb-4">Deployment</p>
+                <h2 class="font-serif text-4xl sm:text-[2.75rem] leading-tight mb-5">One system, tuned for the account
+                    it runs on</h2>
+                <p class="text-[#4a4d43] text-lg leading-relaxed">
+                    A system's thesis doesn't change from broker to broker — but its risk sizing and order
+                    handling do. Every system in the lineup ships in four calibrations.
+                </p>
+            </div>
 
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-5">
+                <div class="fade-up env-node bg-[#F4F1E7] border border-paperline rounded-md p-6">
+                    <p class="font-mono text-xs text-[#8a6a2f] mb-4">FIFO</p>
+                    <h3 class="font-semibold text-lg mb-2">Regulated brokers</h3>
+                    <p class="text-[#5B5F56] text-sm leading-relaxed">Order sequencing and exits are reordered to
+                        satisfy first-in-first-out rules, with no hedged positions on the same pair, and no change to
+                        the underlying signal.</p>
+                </div>
+                <div class="fade-up env-node bg-[#F4F1E7] border border-paperline rounded-md p-6">
+                    <p class="font-mono text-xs text-[#8a6a2f] mb-4">10X</p>
+                    <h3 class="font-semibold text-lg mb-2">10x accounts</h3>
+                    <p class="text-[#5B5F56] text-sm leading-relaxed">Position sizing is recalculated against the higher
+                        leverage cap, so risk-per-trade stays the same fraction of equity regardless of account
+                        leverage.</p>
+                </div>
+                <div class="fade-up env-node bg-[#F4F1E7] border border-paperline rounded-md p-6">
+                    <p class="font-mono text-xs text-[#8a6a2f] mb-4">STANDARD</p>
+                    <h3 class="font-semibold text-lg mb-2">Regular accounts</h3>
+                    <p class="text-[#5B5F56] text-sm leading-relaxed">The default calibration. Full position sizing, no
+                        leverage or FIFO constraints, and the widest range of order types available.</p>
+                </div>
+                <div class="fade-up env-node bg-[#F4F1E7] border border-paperline rounded-md p-6">
+                    <p class="font-mono text-xs text-[#8a6a2f] mb-4">PROP</p>
+                    <h3 class="font-semibold text-lg mb-2">Prop firms</h3>
+                    <p class="text-[#5B5F56] text-sm leading-relaxed">Daily and maximum drawdown limits are enforced
+                        pre-trade, so a system stops itself before it can breach an evaluation or funded-account rule.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PERFORMANCE -->
+    <section id="performance" class="bg-inkalt border-b border-white/10">
+        <div class="max-w-7xl mx-auto px-6 lg:px-10 py-20">
+            <p class="fade-up font-mono text-xs tracking-[0.18em] uppercase text-brass mb-10">Aggregate across the
+                current lineup</p>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-10">
+                <div class="fade-up">
+                    <p class="font-mono text-4xl text-brass num-tick mb-2">4.70<span
+                            class="text-xl text-bone/50">%</span></p>
+                    <p class="text-bone/50 text-sm">Average monthly return per system</p>
+                </div>
+                <div class="fade-up">
+                    <p class="font-mono text-4xl text-brass num-tick mb-2">3.06</p>
+                    <p class="text-bone/50 text-sm">Average profit factor</p>
+                </div>
+                <div class="fade-up">
+                    <p class="font-mono text-4xl text-brass num-tick mb-2">69.3<span
+                            class="text-xl text-bone/50">%</span></p>
+                    <p class="text-bone/50 text-sm">Average win rate</p>
+                </div>
+                <div class="fade-up">
+                    <p class="font-mono text-4xl text-brass num-tick mb-2">8,894</p>
+                    <p class="text-bone/50 text-sm">Trades in the current backtest set</p>
+                </div>
+            </div>
+            <p class="fade-up text-bone/35 text-xs mt-12 max-w-2xl">
+                Figures are historical / backtested results across the current system lineup. Past
+                performance does not guarantee future results, and trading carries risk of loss.
+            </p>
+        </div>
+    </section>
+
+    <!-- QUOTE -->
+    <section id="quote" class="bg-paper text-[#1B1F27] border-b border-paperline">
+        <div class="max-w-4xl mx-auto px-6 lg:px-10 py-24 lg:py-28 text-center">
+            <p class="fade-up font-serif italic text-3xl sm:text-4xl leading-[1.4] mb-8">
+                "We run the carry and commodity systems on a prop account and the majors system on our
+                own FIFO broker. Same lineup, two completely different risk profiles."
+            </p>
+            <div class="fade-up font-mono text-sm text-[#5B5F56]">
+                Head of Systematic Trading · Meridian Capital Partners
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section id="cta" class="bg-ink">
+        <div class="max-w-5xl mx-auto px-6 lg:px-10 py-24 lg:py-28 text-center">
+            <p class="fade-up font-mono text-xs tracking-[0.18em] uppercase text-brass mb-5">Get started</p>
+            <h2 class="fade-up font-serif text-4xl sm:text-5xl text-bone leading-tight mb-6">
+                Pick a system. Pick your broker. We'll calibrate the rest.
+            </h2>
+            <p class="fade-up text-bone/65 text-lg max-w-xl mx-auto mb-10">
+                A system review takes thirty minutes. We'll walk through the lineup and show which
+                systems fit your accounts and risk appetite.
+            </p>
+            <div class="fade-up flex flex-wrap items-center justify-center gap-4">
+                <a href="#" class="btn-primary font-medium px-7 py-4 rounded-sm">Request a system review</a>
+                <a href="#" class="btn-ghost font-medium px-7 py-4 rounded-sm">Download performance sheet</a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-ink border-t border-white/10">
+        <div
+            class="max-w-7xl mx-auto px-6 lg:px-10 py-12 flex flex-col sm:flex-row justify-between gap-8 sm:items-center">
+            <div class="flex items-center gap-2.5">
+                <span class="w-2 h-2 rounded-full bg-brass"></span>
+                <span class="font-mono text-sm text-bone/70">Quantistry Systems</span>
+            </div>
+            <nav class="flex flex-wrap gap-x-8 gap-y-2 text-sm text-bone/45">
+                <a href="#systems" class="hover:text-bone/80 transition-colors">Systems</a>
+                <a href="#environments" class="hover:text-bone/80 transition-colors">Environments</a>
+                <a href="#" class="hover:text-bone/80 transition-colors">Security</a>
+                <a href="#" class="hover:text-bone/80 transition-colors">Documentation</a>
+                <a href="#" class="hover:text-bone/80 transition-colors">Contact</a>
+            </nav>
+            <p class="text-xs text-bone/35 font-mono">© 2026 Quantistry Systems</p>
+        </div>
+    </footer>
+
+    <script>
+        const systems = [
+            { name: 'MAJORS', desc: 'The single highest-volume, most-traded pairs in the universe.', pairs: ['EURUSD', 'USDJPY', 'GBPUSD', 'USDCHF', 'AUDUSD', 'EURGBP'], monthly: '4.52%', pf: '2.17', win: '68.0%', dd: '33.88%' },
+            { name: 'CARRY TRADE', desc: 'Higher-yield currencies against the traditional low-yield funding currencies.', pairs: ['AUDJPY', 'CADJPY', 'AUDCHF', 'CADCHF', 'GBPCHF'], monthly: '4.98%', pf: '3.62', win: '70.9%', dd: '20.75%' },
+            { name: 'COMMODITY', desc: 'AUD and CAD are resource-export economies that move with global growth and commodity prices.', pairs: ['AUDCAD', 'AUDUSD', 'AUDCHF', 'AUDJPY', 'USDCAD'], monthly: '6.36%', pf: '4.23', win: '76.8%', dd: '16.69%' },
+            { name: 'SAFE-HAVEN', desc: 'CHF, JPY, and USD are classic defensive currencies that strengthen in risk-off conditions.', pairs: ['USDCHF', 'USDJPY', 'AUDCHF', 'AUDJPY', 'CADCHF', 'CADJPY'], monthly: '5.22%', pf: '2.27', win: '68.3%', dd: '25.65%' },
+            { name: 'RISK CURRENCIES', desc: 'AUD and GBP are higher-beta, growth-sensitive, and rally hardest in risk-on markets.', pairs: ['AUDUSD', 'GBPAUD', 'GBPCAD', 'AUDCAD', 'GBPUSD', 'AUDCHF'], monthly: '5.59%', pf: '2.90', win: '67.7%', dd: '16.54%' },
+            { name: 'GLOBAL', desc: 'One pair touching each of the seven currencies — the broadest possible regional spread.', pairs: ['EURUSD', 'USDJPY', 'AUDCAD', 'GBPCHF', 'EURAUD', 'CADJPY'], monthly: '4.47%', pf: '2.71', win: '70.7%', dd: '27.57%' },
+            { name: 'NORTH AMERICA', desc: 'Built around the Canadian Dollar, the region\'s primary non-USD currency.', pairs: ['USDCAD', 'AUDCAD', 'CADCHF', 'CADJPY', 'EURCAD', 'GBPCAD'], monthly: '7.08%', pf: '3.35', win: '71.3%', dd: '25.03%' },
+            { name: 'EUROPE', desc: 'Euro, Pound, and Swiss Franc — the three core European currencies.', pairs: ['EURGBP', 'EURCHF', 'GBPCHF', 'EURUSD', 'GBPUSD', 'USDCHF'], monthly: '4.08%', pf: '2.41', win: '65.7%', dd: '13.37%' },
+            { name: 'AUD PAIRS', desc: 'All Australian Dollar exposure in one system.', pairs: ['AUDCAD', 'AUDCHF', 'AUDJPY', 'AUDUSD', 'EURAUD', 'GBPAUD'], monthly: '4.50%', pf: '4.46', win: '76.2%', dd: '11.34%' },
+            { name: 'CAD PAIRS', desc: 'All Canadian Dollar exposure in one system.', pairs: ['AUDCAD', 'CADCHF', 'CADJPY', 'EURCAD', 'GBPCAD', 'USDCAD'], monthly: '7.08%', pf: '3.35', win: '71.3%', dd: '25.03%' },
+            { name: 'CHF PAIRS', desc: 'All Swiss Franc exposure in one system.', pairs: ['AUDCHF', 'CADCHF', 'EURCHF', 'GBPCHF', 'USDCHF'], monthly: '3.79%', pf: '2.39', win: '64.0%', dd: '21.04%' },
+            { name: 'EUR PAIRS', desc: 'All Euro exposure in one system.', pairs: ['EURAUD', 'EURCAD', 'EURCHF', 'EURGBP', 'EURUSD'], monthly: '3.14%', pf: '4.69', win: '68.8%', dd: '7.49%' },
+            { name: 'GBP PAIRS', desc: 'All Pound Sterling exposure in one system.', pairs: ['EURGBP', 'GBPAUD', 'GBPCAD', 'GBPCHF', 'GBPUSD'], monthly: '3.77%', pf: '2.51', win: '64.4%', dd: '19.08%' },
+            { name: 'RESERVE CURRENCIES', desc: 'USD, EUR, JPY, GBP — the world\'s top central-bank reserve currencies.', pairs: ['EURUSD', 'GBPUSD', 'USDJPY', 'EURGBP'], monthly: '3.34%', pf: '2.41', win: '65.6%', dd: '24.98%' },
+            { name: 'ASIA PACIFIC', desc: 'AUD and JPY both track the Pacific Rim growth and risk cycle closely.', pairs: ['AUDJPY', 'AUDUSD', 'AUDCAD', 'AUDCHF', 'CADJPY', 'USDJPY'], monthly: '4.91%', pf: '2.94', win: '72.9%', dd: '25.17%' },
+            { name: 'TRANS ATLANTIC', desc: 'A direct link between Europe and North America.', pairs: ['EURUSD', 'EURCAD', 'GBPUSD', 'GBPCAD'], monthly: '4.52%', pf: '2.83', win: '64.5%', dd: '22.16%' },
+            { name: 'MINOR CROSSES', desc: 'Lower-liquidity cross pairs, complementary to the Majors system.', pairs: ['GBPAUD', 'GBPCHF', 'AUDCHF', 'CADCHF', 'EURAUD'], monthly: '4.36%', pf: '3.22', win: '66.2%', dd: '19.53%' },
+            { name: 'DIVERSIFIED MIX', desc: 'One pair per theme — major, carry, cross, haven, commodity — built for minimal overlap.', pairs: ['EURUSD', 'AUDJPY', 'GBPCAD', 'USDCHF', 'EURAUD'], monthly: '2.21%', pf: '1.94', win: '69.3%', dd: '24.91%' },
+            { name: 'COMMODITY VS HAVEN', desc: 'Commodity-linked currencies traded against classic safe-haven currencies.', pairs: ['AUDCHF', 'AUDJPY', 'CADCHF', 'CADJPY'], monthly: '6.28%', pf: '4.14', win: '71.1%', dd: '17.09%' },
+            { name: 'STABLE PAIRS', desc: 'A lower-volatility basket selected for steadier, more consistent equity curves.', pairs: [], monthly: '3.76%', pf: '2.68', win: '72.4%', dd: '19.61%' },
+        ];
+
+        document.getElementById('system-count').textContent = systems.length;
+
+        const grid = document.getElementById('systems-grid');
+        const visibleCount = 9;
+        grid.innerHTML = systems.map((s, i) => `
+    <div class="fade-up system-card panel rounded-md p-6 flex flex-col ${i >= visibleCount ? 'hidden-system' : ''}">
+      <div class="flex items-start justify-between mb-3">
+        <h3 class="font-serif text-xl text-bone pr-2">${s.name}</h3>
+        <span class="font-mono text-[11px] text-okgreen shrink-0 pt-1">${s.monthly}/mo</span>
+      </div>
+      <p class="text-bone/60 text-sm leading-relaxed mb-4">${s.desc}</p>
+      ${s.pairs.length ? `<div class="flex flex-wrap gap-1.5 mb-5">${s.pairs.map(p => `<span class="pair-tag px-2 py-1 rounded-sm">${p}</span>`).join('')}</div>` : '<div class="mb-5"></div>'}
+      <div class="grid grid-cols-3 gap-2 mt-auto pt-4 border-t border-white/10 font-mono text-xs">
+        <div><p class="text-bone/35 mb-1">Profit factor</p><p class="text-bone/80">${s.pf}</p></div>
+        <div><p class="text-bone/35 mb-1">Win rate</p><p class="text-bone/80">${s.win}</p></div>
+        <div><p class="text-bone/35 mb-1">Max DD</p><p class="text-bone/80">${s.dd}</p></div>
+      </div>
     </div>
+  `).join('');
+
+        const toggleBtn = document.getElementById('toggle-systems');
+        let expanded = false;
+        toggleBtn.addEventListener('click', () => {
+            expanded = !expanded;
+            document.querySelectorAll('.hidden-system').forEach((el) => {
+                el.style.display = expanded ? 'flex' : 'none';
+                el.classList.add('is-visible');
+            });
+            toggleBtn.textContent = expanded ? 'Show fewer systems' : 'Show all systems';
+        });
+
+        const symbols = ['EURUSD', 'GBPAUD', 'AUDCHF', 'USDCHF', 'CADJPY', 'EURCAD', 'GBPCHF', 'AUDJPY', 'USDCAD', 'EURGBP', 'AUDCAD', 'GBPUSD'];
+        const tapeRows = [];
+        for (let i = 0; i < 26; i++) {
+            const sym = symbols[Math.floor(Math.random() * symbols.length)];
+            const side = Math.random() > 0.5 ? 'BUY' : 'SELL';
+            const qty = (Math.floor(Math.random() * 20) + 1) * 5;
+            const price = (Math.random() * 0.9 + 0.6).toFixed(4);
+            const lat = Math.floor(Math.random() * 240) + 120;
+            tapeRows.push({ sym, side, qty, price, lat });
+        }
+
+        function rowHTML(r) {
+            const sideColor = r.side === 'BUY' ? 'text-okgreen' : 'text-badred';
+            return `
+      <div class="flex items-center justify-between px-5 py-2.5 border-b border-white/5">
+        <span class="text-bone/80 w-20">${r.sym}</span>
+        <span class="${sideColor} w-12">${r.side}</span>
+        <span class="text-bone/50 w-14 text-right">${r.qty}</span>
+        <span class="text-bone/70 w-20 text-right">${r.price}</span>
+        <span class="text-bone/35 w-16 text-right">${r.lat}ms</span>
+      </div>`;
+        }
+
+        const tape = document.getElementById('tape');
+        if (tape) {
+            const html = tapeRows.map(rowHTML).join('');
+            tape.innerHTML = html + html;
+        }
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.15 });
+
+        document.querySelectorAll('.fade-up').forEach((el) => observer.observe(el));
+    </script>
 
 </body>
 
