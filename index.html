@@ -21,7 +21,7 @@
         content="A lineup of automated currency trading systems, each built around one correlation thesis, optimized for your broker and account environment.">
     <meta property="og:url" content="https://quantistry.systems/">
     <meta property="og:site_name" content="Quantistry Systems">
-    <meta property="og:image" content="https://quantistry.systems/og-image.png">
+    <meta property="og:image" content="https://quantistry.systems/quantistry_logo.png">
     <meta property="og:locale" content="en_US">
 
     <!-- Twitter -->
@@ -29,7 +29,7 @@
     <meta name="twitter:title" content="Quantistry Systems | Automated FX Trading Systems">
     <meta name="twitter:description"
         content="A lineup of automated currency trading systems, each built around one correlation thesis, optimized for your broker and account environment.">
-    <meta name="twitter:image" content="https://quantistry.systems/og-image.png">
+    <meta name="twitter:image" content="https://quantistry.systems/quantistry_logo.png">
 
     <link rel="icon"
         href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%230B0E14'/%3E%3Ccircle cx='16' cy='16' r='7' fill='%23C89B4A'/%3E%3C/svg%3E">
@@ -39,7 +39,6 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap"
         rel="stylesheet">
-    <script src="https://cdn.tailwindcss.com"></script>
     <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -58,159 +57,6 @@
   "url": "https://quantistry.systems/"
 }
 </script>
-
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        ink: '#0B0E14',
-                        inkalt: '#11161F',
-                        inkline: '#1C2230',
-                        paper: '#EAE6DA',
-                        paperline: '#D8D2C0',
-                        bone: '#E9E6DD',
-                        brass: '#C89B4A',
-                        brassbright: '#E0B562',
-                        teal: '#4C6B72',
-                        okgreen: '#6E9C7C',
-                        badred: '#B06456',
-                    },
-                    fontFamily: {
-                        display: ['Archivo', 'sans-serif'],
-                        sans: ['Inter', 'sans-serif'],
-                        mono: ['"IBM Plex Mono"', 'monospace'],
-                    },
-                },
-            },
-        };
-    </script>
-    <style>
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            background: #0B0E14;
-        }
-
-        ::selection {
-            background: #C89B4A;
-            color: #0B0E14;
-        }
-
-        .fade-up {
-            opacity: 0;
-            transform: translateY(18px);
-            transition: opacity 0.7s ease, transform 0.7s ease;
-        }
-
-        .fade-up.is-visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        .panel {
-            border: 1px solid rgba(233, 230, 221, 0.10);
-            background: #11161F;
-        }
-
-        .panel:hover {
-            border-color: rgba(200, 155, 74, 0.45);
-        }
-
-        .btn-primary {
-            background: #C89B4A;
-            color: #0B0E14;
-            transition: background-color 0.2s ease, transform 0.15s ease;
-        }
-
-        .btn-primary:hover {
-            background: #E0B562;
-        }
-
-        .btn-primary:active {
-            transform: scale(0.98);
-        }
-
-        .btn-ghost {
-            border: 1px solid rgba(233, 230, 221, 0.22);
-            color: #E9E6DD;
-            transition: border-color 0.2s ease, background-color 0.2s ease;
-        }
-
-        .btn-ghost:hover {
-            border-color: rgba(233, 230, 221, 0.55);
-            background: rgba(233, 230, 221, 0.04);
-        }
-
-        .step-node {
-            transition: border-color 0.25s ease, transform 0.25s ease;
-        }
-
-        .step-node:hover {
-            border-color: #1B1F27;
-            transform: translateY(-3px);
-        }
-
-        .pair-tag {
-            font-family: 'IBM Plex Mono', monospace;
-            font-size: 11px;
-            background: rgba(233, 230, 221, 0.06);
-            color: rgba(233, 230, 221, 0.6);
-            border: 1px solid rgba(233, 230, 221, 0.10);
-        }
-
-        .system-card {
-            transition: border-color 0.2s ease, transform 0.2s ease;
-            cursor: pointer;
-        }
-
-        .system-card:hover {
-            transform: translateY(-2px);
-        }
-
-        .hidden-system {
-            display: none;
-        }
-
-        .tab-btn {
-            font-family: 'IBM Plex Mono', monospace;
-            transition: color 0.2s ease, border-color 0.2s ease;
-            border-bottom: 2px solid transparent;
-            color: rgba(233, 230, 221, 0.45);
-        }
-
-        .tab-btn.active {
-            color: #E9E6DD;
-            border-color: #C89B4A;
-        }
-
-        #modal-overlay {
-            transition: opacity 0.2s ease;
-        }
-
-        @media (prefers-reduced-motion: reduce) {
-            html {
-                scroll-behavior: auto;
-            }
-
-            .fade-up {
-                opacity: 1;
-                transform: none;
-                transition: none;
-            }
-
-            .step-node:hover,
-            .system-card:hover {
-                transform: none;
-            }
-        }
-
-        .num-tick {
-            font-variant-numeric: tabular-nums;
-        }
-    </style>
 </head>
 
 <body class="font-sans text-bone antialiased">
@@ -232,7 +78,7 @@
                 <a href="#keymaker" class="hover:text-bone transition-colors">KeyMaker CRM</a>
                 <a href="#performance" class="hover:text-bone transition-colors">Performance</a>
             </nav>
-            <a href="#cta" class="btn-primary text-sm font-medium px-4 py-2 rounded-sm">Talk to us</a>
+            <a href="#contact" class="btn-primary text-sm font-medium px-4 py-2 rounded-sm">Talk to us</a>
         </div>
     </header>
 
@@ -250,8 +96,8 @@
                         One system per thesis. Not one system for everything.
                     </h1>
                     <p class="text-lg text-bone/70 max-w-xl mb-9 leading-relaxed">
-                        Quantistry runs a lineup of automated FX trading systems — carry, commodity, safe-haven,
-                        majors, and more — each isolated to its own currency logic and independently
+                        Quantistry runs a lineup of automated FX trading systems - carry, commodity, safe-haven,
+                        majors, and more - each isolated to its own currency logic and independently
                         allocatable across your accounts.
                     </p>
                     <div class="flex flex-wrap items-center gap-4">
@@ -260,7 +106,7 @@
                         <a href="#process" class="btn-ghost font-medium px-6 py-3.5 rounded-sm">How onboarding works</a>
                     </div>
                     <p class="mt-10 pt-8 border-t border-white/10 font-mono text-xs text-bone/50 leading-relaxed">
-                        Systems can be optimized for FIFO-regulated, leveraged, or prop firm accounts —
+                        Systems can be optimized for FIFO-regulated, leveraged, or prop firm accounts -
                         regular trading accounts are the default.
                     </p>
                 </div>
@@ -279,7 +125,7 @@
                             <svg id="hero-curve" viewBox="0 0 400 150" class="w-full h-[150px]"
                                 preserveAspectRatio="none" aria-hidden="true"></svg>
                             <p class="font-mono text-[10px] text-bone/30 mt-1 mb-2">Illustrative equity curve, derived
-                                from backtested monthly return &amp; drawdown</p>
+                                from backtested monthly return & drawdown</p>
                         </div>
                         <div id="hero-stats" class="grid grid-cols-4 border-t border-white/10 divide-x divide-white/10">
                         </div>
@@ -297,7 +143,7 @@
                         system is built on one correlation, not a blend of everything</h2>
                     <p class="text-bone/65 text-lg leading-relaxed">
                         Instead of one strategy trading every pair, Quantistry runs a separate system per
-                        thesis — a shared currency, a shared risk-on/risk-off behavior, a shared region. Each
+                        thesis - a shared currency, a shared risk-on/risk-off behavior, a shared region. Each
                         one is backtested, scored, and can be allocated independently. Click any system for
                         the full statistics.
                     </p>
@@ -330,7 +176,7 @@
                     <div class="fade-up step-node bg-[#F4F1E7] border border-paperline rounded-md p-6">
                         <p class="font-mono text-xs text-[#8a6a2f] mb-4">01 · CONTACT</p>
                         <h3 class="font-display font-semibold text-lg mb-2">Discuss your environment</h3>
-                        <p class="text-[#5B5F56] text-sm leading-relaxed">We start with your setup — broker, leverage,
+                        <p class="text-[#5B5F56] text-sm leading-relaxed">We start with your setup - broker, leverage,
                             minimum deposit, and the account type you'll be trading on.</p>
                     </div>
                     <div class="fade-up step-node bg-[#F4F1E7] border border-paperline rounded-md p-6">
@@ -362,7 +208,7 @@
                     <p class="font-mono text-xs tracking-[0.18em] uppercase text-brass mb-4">Included with every setup
                     </p>
                     <h2 class="font-display font-semibold text-4xl sm:text-[2.5rem] leading-tight text-bone mb-5">Every
-                        client runs on KeyMaker, our licensing &amp; reporting layer</h2>
+                        client runs on KeyMaker, our licensing & reporting layer</h2>
                     <p class="text-bone/65 text-lg leading-relaxed mb-8">
                         <a href="https://keymaker.cloud/" target="_blank" rel="noopener"
                             class="text-brass hover:text-brassbright underline underline-offset-4">KeyMaker</a>
@@ -374,22 +220,22 @@
                     <ul class="space-y-4">
                         <li class="flex gap-3">
                             <span class="w-1.5 h-1.5 rounded-full bg-brass mt-2 shrink-0" aria-hidden="true"></span>
-                            <span class="text-bone/75"><strong class="text-bone">License tracking</strong> — every
+                            <span class="text-bone/75"><strong class="text-bone">License tracking</strong> - every
                                 system license issued, tracked, and revocable per client and per environment.</span>
                         </li>
                         <li class="flex gap-3">
                             <span class="w-1.5 h-1.5 rounded-full bg-brass mt-2 shrink-0" aria-hidden="true"></span>
-                            <span class="text-bone/75"><strong class="text-bone">Automated invoicing</strong> — invoices
+                            <span class="text-bone/75"><strong class="text-bone">Automated invoicing</strong> - invoices
                                 generate on activation, renewal, or change, with no manual billing.</span>
                         </li>
                         <li class="flex gap-3">
                             <span class="w-1.5 h-1.5 rounded-full bg-brass mt-2 shrink-0" aria-hidden="true"></span>
-                            <span class="text-bone/75"><strong class="text-bone">Performance reporting</strong> — track
+                            <span class="text-bone/75"><strong class="text-bone">Performance reporting</strong> - track
                                 performance across every client, system, and account from one dashboard.</span>
                         </li>
                         <li class="flex gap-3">
                             <span class="w-1.5 h-1.5 rounded-full bg-brass mt-2 shrink-0" aria-hidden="true"></span>
-                            <span class="text-bone/75"><strong class="text-bone">Team &amp; partner access</strong> —
+                            <span class="text-bone/75"><strong class="text-bone">Team & partner access</strong> -
                                 assign clients to managers or partners with scoped, restricted visibility.</span>
                         </li>
                     </ul>
@@ -407,31 +253,31 @@
                                 class="text-right">Status</span>
                         </div>
                         <div class="grid grid-cols-4 px-5 py-3 items-center">
-                            <span class="text-bone/75">Meridian Cap.</span><span class="text-bone/60">Carry
-                                Trade</span><span class="text-bone/50">Prop</span><span
+                            <span class="text-bone/75">Partner 1</span><span class="text-bone/60">Carry
+                                Trade</span><span class="text-bone/50">Regular</span><span
                                 class="text-right text-okgreen">Active</span>
                         </div>
                         <div class="grid grid-cols-4 px-5 py-3 items-center">
-                            <span class="text-bone/75">Meridian Cap.</span><span class="text-bone/60">Majors</span><span
+                            <span class="text-bone/75">Partner 1</span><span class="text-bone/60">Majors</span><span
                                 class="text-bone/50">FIFO</span><span class="text-right text-okgreen">Active</span>
                         </div>
                         <div class="grid grid-cols-4 px-5 py-3 items-center">
-                            <span class="text-bone/75">Northline FX</span><span
+                            <span class="text-bone/75">Partner FX</span><span
                                 class="text-bone/60">Commodity</span><span class="text-bone/50">10x</span><span
                                 class="text-right text-brass">Renewing</span>
                         </div>
                         <div class="grid grid-cols-4 px-5 py-3 items-center">
-                            <span class="text-bone/75">Northline FX</span><span class="text-bone/60">Global</span><span
+                            <span class="text-bone/75">Partner FX</span><span class="text-bone/60">Global</span><span
                                 class="text-bone/50">Regular</span><span class="text-right text-okgreen">Active</span>
                         </div>
                         <div class="grid grid-cols-4 px-5 py-3 items-center">
-                            <span class="text-bone/75">Arcbridge Ltd.</span><span
-                                class="text-bone/60">Safe-Haven</span><span class="text-bone/50">FIFO</span><span
+                            <span class="text-bone/75">Partner Crypto</span><span
+                                class="text-bone/60">Crypto</span><span class="text-bone/50">Regular</span><span
                                 class="text-right text-bone/40">Processing</span>
                         </div>
                     </div>
                     <div class="px-5 py-3.5 border-t border-white/10 font-mono text-[10px] text-bone/35">Illustrative
-                        preview — actual dashboard hosted at keymaker.cloud</div>
+                        preview - actual dashboard hosted at keymaker.cloud</div>
                 </div>
             </div>
         </section>
@@ -472,11 +318,11 @@
         <section class="bg-paper text-[#1B1F27] border-b border-paperline">
             <div class="max-w-4xl mx-auto px-6 lg:px-10 py-24 lg:py-28 text-center">
                 <p class="fade-up font-display italic text-3xl sm:text-4xl leading-[1.4] mb-8">
-                    "We run the carry and commodity systems on a prop account and the majors system on our
-                    own FIFO broker. Same lineup, two completely different risk profiles."
+                    "We run the carry, commodity and the majors system on our
+                    own broker. Same lineup, three completely different risk profiles."
                 </p>
                 <div class="fade-up font-mono text-sm text-[#5B5F56]">
-                    Head of Systematic Trading · Meridian Capital Partners
+                    Head of Systematic Trading · Capital Partners
                 </div>
             </div>
         </section>
@@ -493,7 +339,7 @@
                     systems fit your accounts and risk appetite.
                 </p>
                 <div class="fade-up flex flex-wrap items-center justify-center gap-4">
-                    <a href="#" class="btn-primary font-medium px-7 py-4 rounded-sm">Request a system review</a>
+                    <a href="#contact" class="btn-primary font-medium px-7 py-4 rounded-sm">Request a system review</a>
                     <a href="#" class="btn-ghost font-medium px-7 py-4 rounded-sm">Download performance sheet</a>
                 </div>
             </div>
@@ -512,7 +358,7 @@
                 <a href="#systems" class="hover:text-bone/80 transition-colors">Systems</a>
                 <a href="#process" class="hover:text-bone/80 transition-colors">Onboarding</a>
                 <a href="#keymaker" class="hover:text-bone/80 transition-colors">KeyMaker CRM</a>
-                <a href="#" class="hover:text-bone/80 transition-colors">Contact</a>
+                <a href="#contact" class="hover:text-bone/80 transition-colors">Contact</a>
             </nav>
             <p class="text-xs text-bone/35 font-mono">© 2026 Quantistry Systems</p>
         </div>
@@ -526,228 +372,43 @@
         </div>
     </div>
 
-    <script>
-        let systemsData = [];
-
-        async function loadSystems() {
-            try {
-                const res = await fetch('systems.json');
-                systemsData = await res.json();
-            } catch (e) {
-                console.error('Could not load systems.json', e);
-                systemsData = [];
-            }
-            renderGrid();
-            renderHero();
-        }
-
-        // ---------- Systems grid + modal ----------
-        const grid = document.getElementById('systems-grid');
-        const visibleCount = 6;
-
-        function renderGrid() {
-            grid.innerHTML = systemsData.map((s, i) => `
-      <div class="fade-up system-card panel rounded-md p-6 flex flex-col ${i >= visibleCount ? 'hidden-system' : ''}"
-           role="listitem" tabindex="0" data-index="${i}">
-        <div class="flex items-start justify-between mb-3">
-          <h3 class="font-display font-semibold text-xl text-bone pr-2">${s.name}</h3>
-          <span class="font-mono text-[11px] text-okgreen shrink-0 pt-1">${s.stats.monthly}/mo</span>
+    <!-- CONTACT MODAL -->
+    <div id="contact-modal-overlay" class="fixed inset-0 bg-black/70 z-50 hidden items-center justify-center p-4"
+        role="presentation">
+        <div class="panel bg-inkalt rounded-md max-w-lg w-full max-h-[85vh] overflow-y-auto" role="dialog"
+            aria-modal="true" aria-labelledby="contact-modal-title">
+            <div class="flex items-start justify-between px-6 py-5 border-b border-white/10">
+                <h3 id="contact-modal-title" class="font-display font-semibold text-2xl text-bone">Contact Us</h3>
+                <button id="contact-modal-close" class="text-bone/50 hover:text-bone font-mono text-sm"
+                    aria-label="Close">✕</button>
+            </div>
+            <div class="px-6 py-6">
+                <form id="contact-form" action="https://api.web3forms.com/submit" method="POST"
+                    class="flex flex-col gap-4">
+                    <div class="flex flex-col gap-1.5">
+                        <label for="name" class="font-mono text-xs text-bone/60 tracking-wide uppercase">Name</label>
+                        <input type="text" id="name" name="name" required
+                            class="bg-ink border border-white/10 rounded-sm px-4 py-2.5 text-bone focus:outline-none focus:border-brass focus:ring-1 focus:ring-brass transition-colors">
+                    </div>
+                    <div class="flex flex-col gap-1.5">
+                        <label for="email" class="font-mono text-xs text-bone/60 tracking-wide uppercase">Email</label>
+                        <input type="email" id="email" name="email" required
+                            class="bg-ink border border-white/10 rounded-sm px-4 py-2.5 text-bone focus:outline-none focus:border-brass focus:ring-1 focus:ring-brass transition-colors">
+                    </div>
+                    <div class="flex flex-col gap-1.5">
+                        <label for="message"
+                            class="font-mono text-xs text-bone/60 tracking-wide uppercase">Message</label>
+                        <textarea id="message" name="message" rows="4" required
+                            class="bg-ink border border-white/10 rounded-sm px-4 py-2.5 text-bone focus:outline-none focus:border-brass focus:ring-1 focus:ring-brass transition-colors resize-y"></textarea>
+                    </div>
+                    <div id="form-result" class="hidden font-mono text-xs mt-1"></div>
+                    <button type="submit" class="btn-primary font-medium px-6 py-3.5 rounded-sm mt-3 w-full">Submit
+                        Message</button>
+                </form>
+            </div>
         </div>
-        <p class="text-bone/60 text-sm leading-relaxed mb-4">${s.description}</p>
-        ${s.pairs.length ? `<div class="flex flex-wrap gap-1.5 mb-5">${s.pairs.map(p => `<span class="pair-tag px-2 py-1 rounded-sm">${p}</span>`).join('')}</div>` : '<div class="mb-5"></div>'}
-        <div class="grid grid-cols-3 gap-2 mt-auto pt-4 border-t border-white/10 font-mono text-xs">
-          <div><p class="text-bone/35 mb-1">Profit factor</p><p class="text-bone/80">${s.stats.profitFactor}</p></div>
-          <div><p class="text-bone/35 mb-1">Win rate</p><p class="text-bone/80">${s.stats.winRate}</p></div>
-          <div><p class="text-bone/35 mb-1">Max DD</p><p class="text-bone/80">${s.stats.maxDrawdown}</p></div>
-        </div>
-      </div>
-    `).join('');
-
-            document.querySelectorAll('#systems-grid .system-card').forEach((el) => {
-                el.addEventListener('click', () => openModal(parseInt(el.dataset.index, 10)));
-                el.addEventListener('keydown', (e) => {
-                    if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openModal(parseInt(el.dataset.index, 10)); }
-                });
-            });
-
-            document.querySelectorAll('#systems-grid .fade-up').forEach((el) => observer.observe(el));
-        }
-
-        const toggleBtn = document.getElementById('toggle-systems');
-        let expanded = false;
-        toggleBtn.addEventListener('click', () => {
-            expanded = !expanded;
-            document.querySelectorAll('.hidden-system').forEach((el) => {
-                el.style.display = expanded ? 'flex' : 'none';
-                el.classList.add('is-visible');
-            });
-            toggleBtn.textContent = expanded ? 'Show fewer systems' : 'Show all systems';
-            toggleBtn.setAttribute('aria-expanded', expanded ? 'true' : 'false');
-        });
-
-        const overlay = document.getElementById('modal-overlay');
-        const modalContent = document.getElementById('modal-content');
-        let lastFocused = null;
-
-        function openModal(index) {
-            const s = systemsData[index];
-            if (!s) return;
-            lastFocused = document.activeElement;
-            modalContent.innerHTML = `
-      <div class="flex items-start justify-between px-6 py-5 border-b border-white/10">
-        <h3 id="modal-title" class="font-display font-semibold text-2xl text-bone">${s.name}</h3>
-        <button id="modal-close" class="text-bone/50 hover:text-bone font-mono text-sm" aria-label="Close">✕</button>
-      </div>
-      <div class="px-6 py-6">
-        <p class="text-bone/70 leading-relaxed mb-5">${s.description}</p>
-        ${s.pairs.length ? `<div class="flex flex-wrap gap-1.5 mb-6">${s.pairs.map(p => `<span class="pair-tag px-2 py-1 rounded-sm">${p}</span>`).join('')}</div>` : ''}
-        <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-6 font-mono text-xs">
-          <div class="panel rounded-sm p-3"><p class="text-bone/35 mb-1">Monthly</p><p class="text-bone text-sm">${s.stats.monthly}</p></div>
-          <div class="panel rounded-sm p-3"><p class="text-bone/35 mb-1">Profit factor</p><p class="text-bone text-sm">${s.stats.profitFactor}</p></div>
-          <div class="panel rounded-sm p-3"><p class="text-bone/35 mb-1">Win rate</p><p class="text-bone text-sm">${s.stats.winRate}</p></div>
-          <div class="panel rounded-sm p-3"><p class="text-bone/35 mb-1">Max drawdown</p><p class="text-bone text-sm">${s.stats.maxDrawdown}</p></div>
-        </div>
-        <h4 class="font-mono text-xs uppercase tracking-wide text-bone/40 mb-3">Full statistics</h4>
-        <dl class="grid grid-cols-2 gap-x-6 gap-y-3 font-mono text-xs text-bone/70">
-          <div class="flex justify-between border-b border-white/5 pb-2"><dt class="text-bone/40">Total net profit</dt><dd>${s.details.totalNetProfit}</dd></div>
-          <div class="flex justify-between border-b border-white/5 pb-2"><dt class="text-bone/40">Sharpe ratio</dt><dd>${s.details.sharpeRatio}</dd></div>
-          <div class="flex justify-between border-b border-white/5 pb-2"><dt class="text-bone/40">Recovery factor</dt><dd>${s.details.recoveryFactor}</dd></div>
-          <div class="flex justify-between border-b border-white/5 pb-2"><dt class="text-bone/40">Expected payoff</dt><dd>${s.details.expectedPayoff}</dd></div>
-          <div class="flex justify-between border-b border-white/5 pb-2"><dt class="text-bone/40">Total trades</dt><dd>${s.details.totalTrades}</dd></div>
-          <div class="flex justify-between border-b border-white/5 pb-2"><dt class="text-bone/40">Short trades won</dt><dd>${s.details.shortTradesWon}</dd></div>
-          <div class="flex justify-between border-b border-white/5 pb-2"><dt class="text-bone/40">Long trades won</dt><dd>${s.details.longTradesWon}</dd></div>
-          <div class="flex justify-between border-b border-white/5 pb-2"><dt class="text-bone/40">Gross profit</dt><dd>${s.details.grossProfit}</dd></div>
-          <div class="flex justify-between border-b border-white/5 pb-2"><dt class="text-bone/40">Gross loss</dt><dd>${s.details.grossLoss}</dd></div>
-          <div class="flex justify-between border-b border-white/5 pb-2"><dt class="text-bone/40">Largest profit trade</dt><dd>${s.details.largestProfitTrade}</dd></div>
-          <div class="flex justify-between border-b border-white/5 pb-2"><dt class="text-bone/40">Largest loss trade</dt><dd>${s.details.largestLossTrade}</dd></div>
-          <div class="flex justify-between border-b border-white/5 pb-2"><dt class="text-bone/40">Average profit trade</dt><dd>${s.details.averageProfitTrade}</dd></div>
-        </dl>
-        <p class="text-bone/30 text-[11px] mt-6">Historical / backtested results. Past performance does not guarantee future results.</p>
-      </div>
-    `;
-            overlay.classList.remove('hidden');
-            overlay.classList.add('flex');
-            document.body.style.overflow = 'hidden';
-            document.getElementById('modal-close').addEventListener('click', closeModal);
-            document.getElementById('modal-close').focus();
-        }
-
-        function closeModal() {
-            overlay.classList.add('hidden');
-            overlay.classList.remove('flex');
-            document.body.style.overflow = '';
-            if (lastFocused) lastFocused.focus();
-        }
-
-        overlay.addEventListener('click', (e) => { if (e.target === overlay) closeModal(); });
-        document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeModal(); });
-
-        // ---------- Hero performance explorer ----------
-        const heroSystemNames = ['MAJORS', 'CARRY TRADE', 'COMMODITY', 'SAFE-HAVEN', 'GLOBAL'];
-        let heroActive = 0;
-
-        function hashSeed(str) {
-            let h = 0;
-            for (let i = 0; i < str.length; i++) { h = (h << 5) - h + str.charCodeAt(i); h |= 0; }
-            return h;
-        }
-        function mulberry32(a) {
-            return function () {
-                a |= 0; a = (a + 0x6D2B79F5) | 0;
-                let t = Math.imul(a ^ (a >>> 15), 1 | a);
-                t = (t + Math.imul(t ^ (t >>> 7), 61 | t)) ^ t;
-                return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
-            };
-        }
-
-        function buildCurvePoints(sys) {
-            const monthly = parseFloat(sys.stats.monthly) || 3;
-            const dd = parseFloat(sys.stats.maxDrawdown) || 20;
-            const rand = mulberry32(hashSeed(sys.name));
-            let val = 100;
-            const points = [val];
-            const n = 30;
-            for (let i = 1; i <= n; i++) {
-                const drift = (monthly / 100) / 3.2;
-                const vol = (dd / 100) * 0.55;
-                const shock = (rand() - 0.52) * vol;
-                val = Math.max(val * (1 + drift + shock), val * 0.4);
-                points.push(val);
-            }
-            return points;
-        }
-
-        function pointsToPath(points) {
-            const w = 400, h = 150, pad = 6;
-            const min = Math.min(...points), max = Math.max(...points);
-            const range = (max - min) || 1;
-            const step = (w) / (points.length - 1);
-            const coords = points.map((p, i) => {
-                const x = i * step;
-                const y = h - pad - ((p - min) / range) * (h - pad * 2);
-                return [x, y];
-            });
-            const line = coords.map((c, i) => (i === 0 ? `M${c[0]},${c[1]}` : `L${c[0]},${c[1]}`)).join(' ');
-            const area = `${line} L${w},${h} L0,${h} Z`;
-            return { line, area };
-        }
-
-        function renderHeroCurve() {
-            const sys = systemsData.find((s) => s.name === heroSystemNames[heroActive]);
-            if (!sys) return;
-            const { line, area } = pointsToPath(buildCurvePoints(sys));
-            const svg = document.getElementById('hero-curve');
-            svg.innerHTML = `
-      <defs>
-        <linearGradient id="curveFill" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0%" stop-color="#C89B4A" stop-opacity="0.35"/>
-          <stop offset="100%" stop-color="#C89B4A" stop-opacity="0"/>
-        </linearGradient>
-      </defs>
-      <path d="${area}" fill="url(#curveFill)" stroke="none"></path>
-      <path d="${line}" fill="none" stroke="#C89B4A" stroke-width="2"></path>
-    `;
-
-            document.getElementById('hero-stats').innerHTML = `
-      <div class="px-5 py-3.5"><p class="text-[11px] text-bone/45 uppercase tracking-wide mb-1">Monthly</p><p class="font-mono text-sm text-bone">${sys.stats.monthly}</p></div>
-      <div class="px-5 py-3.5"><p class="text-[11px] text-bone/45 uppercase tracking-wide mb-1">Profit factor</p><p class="font-mono text-sm text-bone">${sys.stats.profitFactor}</p></div>
-      <div class="px-5 py-3.5"><p class="text-[11px] text-bone/45 uppercase tracking-wide mb-1">Win rate</p><p class="font-mono text-sm text-bone">${sys.stats.winRate}</p></div>
-      <div class="px-5 py-3.5"><p class="text-[11px] text-bone/45 uppercase tracking-wide mb-1">Max DD</p><p class="font-mono text-sm text-bone">${sys.stats.maxDrawdown}</p></div>
-    `;
-        }
-
-        function renderHero() {
-            const tabs = document.getElementById('hero-tabs');
-            tabs.innerHTML = heroSystemNames.map((name, i) => `
-      <button class="tab-btn text-xs uppercase px-3 py-2 ${i === 0 ? 'active' : ''}" role="tab" aria-selected="${i === 0}" data-i="${i}">${name}</button>
-    `).join('');
-            tabs.querySelectorAll('.tab-btn').forEach((btn) => {
-                btn.addEventListener('click', () => {
-                    heroActive = parseInt(btn.dataset.i, 10);
-                    tabs.querySelectorAll('.tab-btn').forEach((b) => { b.classList.remove('active'); b.setAttribute('aria-selected', 'false'); });
-                    btn.classList.add('active');
-                    btn.setAttribute('aria-selected', 'true');
-                    renderHeroCurve();
-                });
-            });
-            renderHeroCurve();
-        }
-
-        // ---------- Scroll reveal ----------
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach((entry) => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('is-visible');
-                    observer.unobserve(entry.target);
-                }
-            });
-        }, { threshold: 0.15 });
-
-        document.querySelectorAll('.fade-up').forEach((el) => observer.observe(el));
-
-        loadSystems();
-    </script>
-
+    </div>
+    <script type="module" src="/src/main.js"></script>
 </body>
 
 </html>

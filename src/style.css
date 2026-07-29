@@ -1,0 +1,146 @@
+@import "tailwindcss";
+
+@theme {
+    --color-ink: #0B0E14;
+    --color-inkalt: #11161F;
+    --color-inkline: #1C2230;
+    --color-paper: #EAE6DA;
+    --color-paperline: #D8D2C0;
+    --color-bone: #E9E6DD;
+    --color-brass: #C89B4A;
+    --color-brassbright: #E0B562;
+    --color-teal: #4C6B72;
+    --color-okgreen: #6E9C7C;
+    --color-badred: #B06456;
+
+    --font-display: Archivo, sans-serif;
+    --font-sans: Inter, sans-serif;
+    --font-mono: "IBM Plex Mono", monospace;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #0B0E14;
+}
+
+::selection {
+    background: #C89B4A;
+    color: #0B0E14;
+}
+
+/* Custom utility styles */
+.fade-up {
+    opacity: 0;
+    transform: translateY(18px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.fade-up.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.panel {
+    border: 1px solid rgba(233, 230, 221, 0.10);
+    background: #11161F;
+}
+
+.panel:hover {
+    border-color: rgba(200, 155, 74, 0.45);
+}
+
+.btn-primary {
+    background: #C89B4A;
+    color: #0B0E14;
+    transition: background-color 0.2s ease, transform 0.15s ease;
+}
+
+.btn-primary:hover {
+    background: #E0B562;
+}
+
+.btn-primary:active {
+    transform: scale(0.98);
+}
+
+.btn-ghost {
+    border: 1px solid rgba(233, 230, 221, 0.22);
+    color: #E9E6DD;
+    transition: border-color 0.2s ease, background-color 0.2s ease;
+}
+
+.btn-ghost:hover {
+    border-color: rgba(233, 230, 221, 0.55);
+    background: rgba(233, 230, 221, 0.04);
+}
+
+.step-node {
+    transition: border-color 0.25s ease, transform 0.25s ease;
+}
+
+.step-node:hover {
+    border-color: #1B1F27;
+    transform: translateY(-3px);
+}
+
+.pair-tag {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    background: rgba(233, 230, 221, 0.06);
+    color: rgba(233, 230, 221, 0.6);
+    border: 1px solid rgba(233, 230, 221, 0.10);
+}
+
+.system-card {
+    transition: border-color 0.2s ease, transform 0.2s ease;
+    cursor: pointer;
+}
+
+.system-card:hover {
+    transform: translateY(-2px);
+}
+
+.hidden-system {
+    display: none;
+}
+
+.tab-btn {
+    font-family: 'IBM Plex Mono', monospace;
+    transition: color 0.2s ease, border-color 0.2s ease;
+    border-bottom: 2px solid transparent;
+    color: rgba(233, 230, 221, 0.45);
+}
+
+.tab-btn.active {
+    color: #E9E6DD;
+    border-color: #C89B4A;
+}
+
+#modal-overlay,
+#contact-modal-overlay {
+    transition: opacity 0.2s ease;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    .fade-up {
+        opacity: 1;
+        transform: none;
+        transition: none;
+    }
+
+    .step-node:hover,
+    .system-card:hover {
+        transform: none;
+    }
+}
+
+.num-tick {
+    font-variant-numeric: tabular-nums;
+}
