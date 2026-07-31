@@ -60,7 +60,7 @@ const converted = systems.map((s) => {
       monthly: `${monthlyPct.toFixed(1)}%`,
       profitFactor: s['Profit Factor']?.toFixed ? s['Profit Factor'].toFixed(2) : s['Profit Factor'],
       winRate: pctInParens(s['Profit Trades (% of total)']),
-      maxDrawdown: pctInParens(s['Balance Drawdown Maximal']),
+      maxDrawdown: pctInParens(s['Equity Drawdown Maximal']),
     },
     details: {
       totalNetProfit: usd(s['Total Net Profit']),

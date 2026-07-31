@@ -14,7 +14,7 @@
       "monthly": "7.8%",
       "profitFactor": "2.95",
       "winRate": "68.79%",
-      "maxDrawdown": "19.44%"
+      "maxDrawdown": "46.85%"
     },
     "details": {
       "totalNetProfit": "$93,938.04",
@@ -343,7 +343,7 @@
       "monthly": "5.4%",
       "profitFactor": "3.62",
       "winRate": "65.22%",
-      "maxDrawdown": "11.73%"
+      "maxDrawdown": "17.70%"
     },
     "details": {
       "totalNetProfit": "$64,918.99",
@@ -616,7 +616,7 @@
       "monthly": "3.6%",
       "profitFactor": "6.55",
       "winRate": "69.06%",
-      "maxDrawdown": "2.27%"
+      "maxDrawdown": "8.79%"
     },
     "details": {
       "totalNetProfit": "$43,608.32",
@@ -893,7 +893,7 @@
       "monthly": "4.6%",
       "profitFactor": "2.70",
       "winRate": "63.66%",
-      "maxDrawdown": "6.61%"
+      "maxDrawdown": "22.17%"
     },
     "details": {
       "totalNetProfit": "$55,215.54",
@@ -1233,7 +1233,7 @@
       "monthly": "4.3%",
       "profitFactor": "2.95",
       "winRate": "66.86%",
-      "maxDrawdown": "9.21%"
+      "maxDrawdown": "27.84%"
     },
     "details": {
       "totalNetProfit": "$51,010.41",
@@ -1494,7 +1494,7 @@
       "monthly": "7.1%",
       "profitFactor": "3.29",
       "winRate": "68.39%",
-      "maxDrawdown": "5.75%"
+      "maxDrawdown": "18.22%"
     },
     "details": {
       "totalNetProfit": "$85,518.02",
@@ -1880,7 +1880,7 @@
       "monthly": "8.0%",
       "profitFactor": "3.46",
       "winRate": "72.08%",
-      "maxDrawdown": "6.30%"
+      "maxDrawdown": "27.79%"
     },
     "details": {
       "totalNetProfit": "$96,147.33",
@@ -2217,7 +2217,7 @@
       "monthly": "6.9%",
       "profitFactor": "3.24",
       "winRate": "64.14%",
-      "maxDrawdown": "6.07%"
+      "maxDrawdown": "20.00%"
     },
     "details": {
       "totalNetProfit": "$82,764.37",
@@ -2489,7 +2489,7 @@
       "monthly": "5.6%",
       "profitFactor": "3.47",
       "winRate": "65.38%",
-      "maxDrawdown": "6.35%"
+      "maxDrawdown": "24.99%"
     },
     "details": {
       "totalNetProfit": "$66,787.25",
@@ -2731,7 +2731,7 @@
       "monthly": "6.2%",
       "profitFactor": "3.15",
       "winRate": "69.14%",
-      "maxDrawdown": "13.28%"
+      "maxDrawdown": "38.27%"
     },
     "details": {
       "totalNetProfit": "$74,467.58",
@@ -3084,7 +3084,7 @@
       "monthly": "5.3%",
       "profitFactor": "3.40",
       "winRate": "65.95%",
-      "maxDrawdown": "4.34%"
+      "maxDrawdown": "22.85%"
     },
     "details": {
       "totalNetProfit": "$63,289.11",
@@ -3414,7 +3414,7 @@
       "monthly": "6.0%",
       "profitFactor": "4.30",
       "winRate": "71.00%",
-      "maxDrawdown": "4.28%"
+      "maxDrawdown": "25.49%"
     },
     "details": {
       "totalNetProfit": "$72,149.04",
@@ -3775,7 +3775,7 @@
       "monthly": "4.1%",
       "profitFactor": "2.47",
       "winRate": "63.68%",
-      "maxDrawdown": "14.80%"
+      "maxDrawdown": "27.12%"
     },
     "details": {
       "totalNetProfit": "$49,019.55",
@@ -4044,7 +4044,7 @@
       "monthly": "5.3%",
       "profitFactor": "5.26",
       "winRate": "75.91%",
-      "maxDrawdown": "13.82%"
+      "maxDrawdown": "23.16%"
     },
     "details": {
       "totalNetProfit": "$63,805.67",
@@ -4337,7 +4337,7 @@
       "monthly": "7.6%",
       "profitFactor": "4.77",
       "winRate": "72.65%",
-      "maxDrawdown": "3.41%"
+      "maxDrawdown": "20.81%"
     },
     "details": {
       "totalNetProfit": "$91,731.03",
@@ -4630,7 +4630,7 @@
       "monthly": "30.3%",
       "profitFactor": "3.64",
       "winRate": "68.46%",
-      "maxDrawdown": "13.67%"
+      "maxDrawdown": "26.64%"
     },
     "details": {
       "totalNetProfit": "$363,450.94",
@@ -5504,7 +5504,7 @@
       "monthly": "5.9%",
       "profitFactor": "4.45",
       "winRate": "67.18%",
-      "maxDrawdown": "13.34%"
+      "maxDrawdown": "22.44%"
     },
     "details": {
       "totalNetProfit": "$70,966.62",
@@ -5834,7 +5834,7 @@
       "monthly": "5.6%",
       "profitFactor": "3.28",
       "winRate": "73.55%",
-      "maxDrawdown": "9.99%"
+      "maxDrawdown": "30.06%"
     },
     "details": {
       "totalNetProfit": "$67,406.24",
@@ -6200,7 +6200,7 @@
       "monthly": "8.3%",
       "profitFactor": "3.38",
       "winRate": "69.34%",
-      "maxDrawdown": "7.16%"
+      "maxDrawdown": "21.71%"
     },
     "details": {
       "totalNetProfit": "$99,555.70",
@@ -6538,7 +6538,7 @@
       "monthly": "8.2%",
       "profitFactor": "2.61",
       "winRate": "64.84%",
-      "maxDrawdown": "14.86%"
+      "maxDrawdown": "31.82%"
     },
     "details": {
       "totalNetProfit": "$98,530.11",
@@ -6855,7 +6855,7 @@
       "monthly": "6.1%",
       "profitFactor": "3.25",
       "winRate": "75.12%",
-      "maxDrawdown": "9.99%"
+      "maxDrawdown": "27.22%"
     },
     "details": {
       "totalNetProfit": "$73,115.20",
@@ -7189,7 +7189,7 @@
       "monthly": "8.0%",
       "profitFactor": "3.46",
       "winRate": "72.08%",
-      "maxDrawdown": "6.30%"
+      "maxDrawdown": "27.79%"
     },
     "details": {
       "totalNetProfit": "$96,147.33",
