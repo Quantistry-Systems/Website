@@ -38,9 +38,9 @@ function renderGrid() {
   document.querySelectorAll('#systems-grid .system-card').forEach((el) => {
     el.addEventListener('click', () => openModal(parseInt(el.dataset.index, 10)));
     el.addEventListener('keydown', (e) => {
-      if (e.key === 'Enter' || e.key === ' ') { 
-        e.preventDefault(); 
-        openModal(parseInt(el.dataset.index, 10)); 
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        openModal(parseInt(el.dataset.index, 10));
       }
     });
   });
@@ -68,7 +68,7 @@ let lastFocused = null;
 function openModal(index) {
   const s = systemsData[index];
   if (!s) return;
-  
+
   // save last active element to restore focus on dismiss
   lastFocused = document.activeElement;
 
@@ -86,6 +86,19 @@ function openModal(index) {
         <div class="panel rounded-sm p-3"><p class="text-bone/35 mb-1">Win rate</p><p class="text-bone text-sm">${s.stats.winRate}</p></div>
         <div class="panel rounded-sm p-3"><p class="text-bone/35 mb-1">Max drawdown</p><p class="text-bone text-sm">${s.stats.maxDrawdown}</p></div>
       </div>
+      ${s.balanceGrowth && s.balanceGrowth.length > 1 ? `
+      <h4 class="font-mono text-xs uppercase tracking-wide text-bone/40 mb-3">Balance growth</h4>
+      <div class="panel rounded-sm p-4 mb-6">
+        <div class="relative">
+          <svg id="modal-curve" viewBox="0 0 400 150" class="w-full h-[150px]"
+            preserveAspectRatio="none"></svg>
+          <div id="modal-curve-tooltip" class="curve-tooltip hidden"></div>
+        </div>
+        <div class="flex justify-between font-mono text-[11px] text-bone/35 mt-2">
+          <span>${formatCurveDate(s.balanceGrowth[0].time)}</span>
+          <span>${formatCurveDate(s.balanceGrowth[s.balanceGrowth.length - 1].time)}</span>
+        </div>
+      </div>` : ''}
       <h4 class="font-mono text-xs uppercase tracking-wide text-bone/40 mb-3">Full statistics</h4>
       <dl class="grid grid-cols-2 gap-x-6 gap-y-3 font-mono text-xs text-bone/70">
         <div class="flex justify-between border-b border-white/5 pb-2"><dt class="text-bone/40">Total net profit</dt><dd>${s.details.totalNetProfit}</dd></div>
@@ -109,6 +122,26 @@ function openModal(index) {
   document.body.style.overflow = 'hidden';
   document.getElementById('modal-close').addEventListener('click', closeModal);
   document.getElementById('modal-close').focus();
+
+  const modalCurveSvg = document.getElementById('modal-curve');
+  if (modalCurveSvg && s.balanceGrowth && s.balanceGrowth.length > 1) {
+    renderCurveSvg(
+      modalCurveSvg,
+      document.getElementById('modal-curve-tooltip'),
+      s.balanceGrowth.map((p) => p.balance),
+      s.balanceGrowth.map((p) => p.time),
+      'modalCurveFill'
+    );
+  }
+}
+
+// "2025/07/30 00:00:00" -> "Jul 2025"
+function formatCurveDate(timeStr) {
+  const [datePart] = (timeStr || '').split(' ');
+  const [year, month] = (datePart || '').split('/');
+  if (!year || !month) return timeStr || '';
+  const d = new Date(Date.UTC(+year, +month - 1, 1));
+  return d.toLocaleDateString('en-US', { month: 'short', year: 'numeric', timeZone: 'UTC' });
 }
 
 function closeModal() {
@@ -121,42 +154,11 @@ function closeModal() {
 overlay.addEventListener('click', (e) => { if (e.target === overlay) closeModal(); });
 document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeModal(); });
 
-const heroSystemNames = ['MAJORS', 'CARRY TRADE', 'COMMODITY', 'SAFE-HAVEN', 'GLOBAL'];
+// The 5 systems highlighted in the homepage hero tabs. These must match
+// the "name" field produced by build-systems.mjs (nameFromFile / the
+// "Name" you set in combined.json).
+const heroSystemNames = ['AUD CAD Europe', 'Risk', 'Safe Haven', 'EUR Pairs'];
 let heroActive = 0;
-
-// simple prng seeded by system name to generate deterministic preview curves
-function hashSeed(str) {
-  let h = 0;
-  for (let i = 0; i < str.length; i++) { h = (h << 5) - h + str.charCodeAt(i); h |= 0; }
-  return h;
-}
-
-function mulberry32(a) {
-  return function () {
-    a |= 0; a = (a + 0x6D2B79F5) | 0;
-    let t = Math.imul(a ^ (a >>> 15), 1 | a);
-    t = (t + Math.imul(t ^ (t >>> 7), 61 | t)) ^ t;
-    return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
-  };
-}
-
-function buildCurvePoints(sys) {
-  const monthly = parseFloat(sys.stats.monthly) || 3;
-  const dd = parseFloat(sys.stats.maxDrawdown) || 20;
-  const rand = mulberry32(hashSeed(sys.name));
-  let val = 100;
-  const points = [val];
-  const n = 30;
-
-  for (let i = 1; i <= n; i++) {
-    const drift = (monthly / 100) / 3.2;
-    const vol = (dd / 100) * 0.55;
-    const shock = (rand() - 0.52) * vol;
-    val = Math.max(val * (1 + drift + shock), val * 0.4);
-    points.push(val);
-  }
-  return points;
-}
 
 function pointsToPath(points) {
   const w = 400, h = 150, pad = 6;
@@ -172,26 +174,100 @@ function pointsToPath(points) {
 
   const line = coords.map((c, i) => (i === 0 ? `M${c[0]},${c[1]}` : `L${c[0]},${c[1]}`)).join(' ');
   const area = `${line} L${w},${h} L0,${h} Z`;
-  return { line, area };
+  return { line, area, coords };
+}
+
+function formatCurrency(n) {
+  const num = typeof n === 'number' ? n : parseFloat(n);
+  if (Number.isNaN(num)) return String(n);
+  return num.toLocaleString('en-US', { style: 'currency', currency: 'USD', maximumFractionDigits: 0 });
+}
+
+// Draws a filled line chart of `values` into the given svg element, and
+// wires up a hover/touch tooltip (shown in `tooltipEl`) that tracks the
+// nearest data point to the pointer. gradientId must be unique per svg on
+// the page at once, so hero and modal don't clobber each other's <defs>.
+function renderCurveSvg(svg, tooltipEl, values, times, gradientId) {
+  const { line, area, coords } = pointsToPath(values);
+
+  svg.innerHTML = `
+    <defs>
+      <linearGradient id="${gradientId}" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0%" stop-color="#C89B4A" stop-opacity="0.35"/>
+        <stop offset="100%" stop-color="#C89B4A" stop-opacity="0"/>
+      </linearGradient>
+    </defs>
+    <path d="${area}" fill="url(#${gradientId})" stroke="none"></path>
+    <path d="${line}" fill="none" stroke="#C89B4A" stroke-width="2"></path>
+    <line class="hover-guide" x1="0" y1="0" x2="0" y2="150" stroke="rgba(233,230,221,0.25)" stroke-width="1" visibility="hidden"></line>
+    <circle class="hover-dot" r="3.5" fill="#E0B562" stroke="#0B0E14" stroke-width="1.5" visibility="hidden"></circle>
+    <rect class="hover-hit" x="0" y="0" width="400" height="150" fill="transparent"></rect>
+  `;
+
+  if (!tooltipEl) return;
+
+  const guide = svg.querySelector('.hover-guide');
+  const dot = svg.querySelector('.hover-dot');
+  const hitArea = svg.querySelector('.hover-hit');
+
+  function showAt(clientX, clientY) {
+    const rect = svg.getBoundingClientRect();
+    const relX = clientX - rect.left;
+    if (relX < 0 || relX > rect.width) { hide(); return; }
+
+    // svg viewBox is 400 wide regardless of rendered width (preserveAspectRatio="none")
+    const vbX = (relX / rect.width) * 400;
+    const step = 400 / (coords.length - 1);
+    const index = Math.max(0, Math.min(coords.length - 1, Math.round(vbX / step)));
+    const [x, y] = coords[index];
+
+    guide.setAttribute('x1', x); guide.setAttribute('x2', x);
+    guide.setAttribute('visibility', 'visible');
+    dot.setAttribute('cx', x); dot.setAttribute('cy', y);
+    dot.setAttribute('visibility', 'visible');
+
+    tooltipEl.textContent = `${formatCurrency(values[index])} · ${formatTooltipDate(times[index])}`;
+    tooltipEl.classList.remove('hidden');
+
+    // position tooltip near the point, keeping it inside the chart bounds
+    const leftPct = (x / 400) * 100;
+    tooltipEl.style.left = `${leftPct}%`;
+    tooltipEl.style.transform = leftPct > 70 ? 'translateX(-100%)' : leftPct < 5 ? 'translateX(0)' : 'translateX(-50%)';
+    tooltipEl.style.top = '0px';
+  }
+
+  function hide() {
+    guide.setAttribute('visibility', 'hidden');
+    dot.setAttribute('visibility', 'hidden');
+    tooltipEl.classList.add('hidden');
+  }
+
+  hitArea.addEventListener('mousemove', (e) => showAt(e.clientX, e.clientY));
+  hitArea.addEventListener('mouseleave', hide);
+  hitArea.addEventListener('touchstart', (e) => { showAt(e.touches[0].clientX, e.touches[0].clientY); }, { passive: true });
+  hitArea.addEventListener('touchmove', (e) => { showAt(e.touches[0].clientX, e.touches[0].clientY); }, { passive: true });
+  hitArea.addEventListener('touchend', hide);
+}
+
+// "2025/08/11 23:00:00" -> "Aug 11, 2025"
+function formatTooltipDate(timeStr) {
+  const [datePart] = (timeStr || '').split(' ');
+  const [year, month, day] = (datePart || '').split('/');
+  if (!year || !month || !day) return timeStr || '';
+  const d = new Date(Date.UTC(+year, +month - 1, +day));
+  return d.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric', timeZone: 'UTC' });
 }
 
 function renderHeroCurve() {
   const sys = systemsData.find((s) => s.name === heroSystemNames[heroActive]);
   if (!sys) return;
 
-  const { line, area } = pointsToPath(buildCurvePoints(sys));
+  const values = (sys.balanceGrowth || []).map((p) => p.balance);
+  const times = (sys.balanceGrowth || []).map((p) => p.time);
   const svg = document.getElementById('hero-curve');
-
-  svg.innerHTML = `
-    <defs>
-      <linearGradient id="curveFill" x1="0" y1="0" x2="0" y2="1">
-        <stop offset="0%" stop-color="#C89B4A" stop-opacity="0.35"/>
-        <stop offset="100%" stop-color="#C89B4A" stop-opacity="0"/>
-      </linearGradient>
-    </defs>
-    <path d="${area}" fill="url(#curveFill)" stroke="none"></path>
-    <path d="${line}" fill="none" stroke="#C89B4A" stroke-width="2"></path>
-  `;
+  if (values.length > 1) {
+    renderCurveSvg(svg, document.getElementById('hero-curve-tooltip'), values, times, 'heroCurveFill');
+  }
 
   document.getElementById('hero-stats').innerHTML = `
     <div class="px-5 py-3.5"><p class="text-[11px] text-bone/45 uppercase tracking-wide mb-1">Monthly</p><p class="font-mono text-sm text-bone">${sys.stats.monthly}</p></div>
@@ -210,9 +286,9 @@ function renderHero() {
   tabs.querySelectorAll('.tab-btn').forEach((btn) => {
     btn.addEventListener('click', () => {
       heroActive = parseInt(btn.dataset.i, 10);
-      tabs.querySelectorAll('.tab-btn').forEach((b) => { 
-        b.classList.remove('active'); 
-        b.setAttribute('aria-selected', 'false'); 
+      tabs.querySelectorAll('.tab-btn').forEach((b) => {
+        b.classList.remove('active');
+        b.setAttribute('aria-selected', 'false');
       });
       btn.classList.add('active');
       btn.setAttribute('aria-selected', 'true');
@@ -260,12 +336,12 @@ if (contactCloseBtn) {
 }
 
 if (contactOverlay) {
-  contactOverlay.addEventListener('click', (e) => { 
-    if (e.target === contactOverlay) closeContactModal(); 
+  contactOverlay.addEventListener('click', (e) => {
+    if (e.target === contactOverlay) closeContactModal();
   });
 }
 
-document.addEventListener('keydown', (e) => { 
+document.addEventListener('keydown', (e) => {
   if (e.key === 'Escape' && contactOverlay && !contactOverlay.classList.contains('hidden')) {
     closeContactModal();
   }

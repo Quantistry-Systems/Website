@@ -144,3 +144,22 @@ body {
 .num-tick {
     font-variant-numeric: tabular-nums;
 }
+
+.curve-tooltip {
+    position: absolute;
+    top: 0;
+    pointer-events: none;
+    background: #11161F;
+    border: 1px solid rgba(200, 155, 74, 0.45);
+    color: #E9E6DD;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    white-space: nowrap;
+    padding: 4px 8px;
+    border-radius: 3px;
+    z-index: 10;
+}
+
+.hover-hit {
+    cursor: crosshair;
+}

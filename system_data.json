@@ -1,0 +1,112 @@
+[
+    {
+        "system": "1_usd_pairs",
+        "name": "USD Pairs",
+        "description": "Every pair quoted directly against the Dollar. Pure USD exposure, the most liquid pairs in the set."
+    },
+    {
+        "system": "2_non-usd_pairs",
+        "name": "Non USD Pairs",
+        "description": "Cross pairs with no USD leg. Moves independently of Dollar strength/weakness."
+    },
+    {
+        "system": "3_europe",
+        "name": "Europe",
+        "description": "Euro, Pound, and Swiss Franc. The three core European currencies."
+    },
+    {
+        "system": "4_global",
+        "name": "Global",
+        "description": "One pair touching each of the 7 currencies. Broadest possible spread across regions."
+    },
+    {
+        "system": "5_commodity_currencies",
+        "name": "Commodity",
+        "description": "AUD and CAD are resource-export economies. Both move with global growth and commodity prices."
+    },
+    {
+        "system": "6_safe_haven",
+        "name": "Safe Haven",
+        "description": "CHF, JPY, and USD are classic defensive currencies. Strengthen in risk-off conditions."
+    },
+    {
+        "system": "7_asia-pacific",
+        "name": "Asia Pacific",
+        "description": "AUD and JPY both track the Pacific Rim growth/risk cycle closely."
+    },
+    {
+        "system": "9_cad_pairs",
+        "name": "CAD Pairs",
+        "description": "All Canadian Dollar exposure."
+    },
+    {
+        "system": "10_chf_pairs",
+        "name": "CHF Pairs",
+        "description": "All Swiss Franc exposure."
+    },
+    {
+        "system": "11_eur_pairs",
+        "name": "EUR Pairs",
+        "description": "All Euro exposure."
+    },
+    {
+        "system": "12_gbp_pairs",
+        "name": "GBP Pairs",
+        "description": "All Pound Sterling exposure."
+    },
+    {
+        "system": "13_reserve_currencies",
+        "name": "Reserve",
+        "description": "USD, EUR, JPY, GBP. The world's top central-bank reserve currencies."
+    },
+    {
+        "system": "14_risk_currencies",
+        "name": "Risk",
+        "description": "AUD and GBP are higher-beta, growth-sensitive. Rally hardest in risk-on markets."
+    },
+    {
+        "system": "15_north_america",
+        "name": "North America",
+        "description": "All built around the Canadian Dollar, the region's primary non-USD currency here."
+    },
+    {
+        "system": "16_carry_trade",
+        "name": "Carry Trade",
+        "description": "Higher-yield currencies (AUD, CAD, GBP) against the traditional low-yield funding currencies (JPY, CHF)."
+    },
+    {
+        "system": "17_trans-atlantic",
+        "name": "Transatlantic",
+        "description": "Direct link between Europe (EUR, GBP) and North America (USD, CAD)."
+    },
+    {
+        "system": "18_majors",
+        "name": "Major Pairs",
+        "description": "The single highest-volume, most-traded pairs in the universe."
+    },
+    {
+        "system": "19_minor_crosses",
+        "name": "Minor Crosses",
+        "description": "Lower-liquidity cross pairs, complementary to the Majors basket."
+    },
+    {
+        "system": "20_diversified_mix",
+        "name": "Diversification Mix",
+        "description": "One pair per theme (major, carry, cross, haven, commodity). Built for minimal overlap."
+    },
+    {
+        "system": "21_stable_pairs",
+        "name": "Stable Pairs",
+        "description": "Lower-volatility pairs with closely tied economies, tending toward mean-reverting and range-bound behavior."
+    },
+    {
+        "system": "22_commodity_vs_haven",
+        "name": "Commodity Haven",
+        "description": "Growth- and resource-sensitive currencies traded directly against traditional defensive safe havens."
+    },
+    {
+        "system": "23_aud_cad_europe",
+        "name": "AUD CAD Europe",
+        "description": "Pairs linking resource-exporting commodity dollars (AUD, CAD) to major European economies."
+    }
+]

@@ -122,10 +122,13 @@
                         <div id="hero-tabs" class="flex flex-wrap gap-x-1 gap-y-0 px-5 pt-4" role="tablist"
                             aria-label="Select a system"></div>
                         <div class="px-5 pt-4">
-                            <svg id="hero-curve" viewBox="0 0 400 150" class="w-full h-[150px]"
-                                preserveAspectRatio="none" aria-hidden="true"></svg>
-                            <p class="font-mono text-[10px] text-bone/30 mt-1 mb-2">Illustrative equity curve, derived
-                                from backtested monthly return & drawdown</p>
+                            <div class="relative">
+                                <svg id="hero-curve" viewBox="0 0 400 150" class="w-full h-[150px]"
+                                    preserveAspectRatio="none" aria-hidden="true"></svg>
+                                <div id="hero-curve-tooltip" class="curve-tooltip hidden"></div>
+                            </div>
+                            <p class="font-mono text-[10px] text-bone/30 mt-1 mb-2">Backtested equity curve, hover to
+                                see balance over time</p>
                         </div>
                         <div id="hero-stats" class="grid grid-cols-4 border-t border-white/10 divide-x divide-white/10">
                         </div>
@@ -244,8 +247,8 @@
                 </div>
 
                 <div class="fade-up overflow-hidden">
-                    <img class="w-full border border-paperline rounded-md" src="./keymaker_dashboard.png"
-                        loading="lazy" decoding="async"
+                    <img class="w-full border border-paperline rounded-md" src="./keymaker_dashboard.png" loading="lazy"
+                        decoding="async"
                         alt="Screenshot of the KeyMaker Dashboard with client, license, and performance tracker stats">
                 </div>
             </div>
