@@ -1,7 +1,7 @@
 {
   "name": "quantistry.systems",
   "version": "1.0.0",
-  "description": "A single-page marketing site for Quantistry Systems, built with static HTML, Tailwind CSS (via CDN), and vanilla JavaScript. No build step, no framework, no backend — designed to be hosted directly on GitHub Pages.",
+  "description": "A single-page marketing site for Quantistry Systems, built with static HTML, Tailwind CSS (via CDN), and vanilla JavaScript. No build step, no framework, no backend - designed to be hosted directly on GitHub Pages.",
   "main": "index.js",
   "scripts": {
     "dev": "vite",

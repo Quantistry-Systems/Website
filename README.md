@@ -1,4 +1,4 @@
-# Quantistry Systems — Landing Page
+# Quantistry Systems - Landing Page
 
 A single-page marketing site for Quantistry Systems, built with Vite, Tailwind CSS (v4), and vanilla JavaScript. Features an automated build process for CSS purging, asset hashing, and JavaScript minification, alongside an integrated Web3Forms contact modal.
 
@@ -89,8 +89,8 @@ All system data lives in `public/systems.json` as an array of objects:
 * `stats` populates the summary shown on each grid tile.
 * `details` populates the full statistics shown in the modal when a tile is clicked.
 * The first 6 systems in the array are shown by default; the rest appear behind the "Show all systems" button. Reorder the array to change what's featured up front.
-* The hero "System Performance" widget references five systems by name (`heroSystemNames` array in `src/main.js`) — update that array if you rename or remove any of those systems.
-* The equity curve in the hero widget is generated procedurally from each system's monthly return and max drawdown. It's labeled as illustrative in the UI — if you later have real monthly equity data, swap `buildCurvePoints()` in `src/main.js` for a function that plots it directly.
+* The hero "System Performance" widget references five systems by name (`heroSystemNames` array in `src/main.js`) - update that array if you rename or remove any of those systems.
+* The equity curve in the hero widget is generated procedurally from each system's monthly return and max drawdown. It's labeled as illustrative in the UI - if you later have real monthly equity data, swap `buildCurvePoints()` in `src/main.js` for a function that plots it directly.
 
 ## Contact form (Web3Forms)
 
